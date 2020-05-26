@@ -5,7 +5,7 @@ const API = axios.create({
   // baseURL: process.env.API_URL || 'http://localhost:4000',
 
   // For Heroku Staging
-  baseURL: 'https://hero-log.herokuapp.com/',
+  baseURL: 'https://musictriviaquiz.herokuapp.com/',
 });
 
 API.interceptors.response.use(
