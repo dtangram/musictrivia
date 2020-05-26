@@ -13,7 +13,7 @@ class Landing extends React.Component {
   render() {
     const { publicQuizzes } = this.props;
 
-    if (!publicQuizzes.data) return null;
+    if (publicQuizzes === null) return null;
     return (
       <React.Fragment>
         <section>
@@ -37,27 +37,7 @@ class Landing extends React.Component {
 
           <div className="container">
             <div className="row">
-              {publicQuizzes.data && (publicQuizzes.map(quiz => (
-                <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
-                  <div className="card-body">
-                    <form>
-                      <h3>{quiz.name}</h3>
-
-                      <p>
-                        <Link to={`/quiz/${quiz.id}`}>Play</Link>
-                      </p>
-                    </form>
-                  </div>
-                </article>
-              )))}
-
-              {!publicQuizzes.data && (
-                <article className="card col-sm-12 col-md-12 col-lg-4">
-                  <div className="card-body">
-                    No Quizzes
-                  </div>
-                </article>
-              )}
+              
             </div>
           </div>
         </section>
