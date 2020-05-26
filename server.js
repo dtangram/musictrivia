@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 
 // Heroku Production
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'staging') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, 'reactjs/build')));
 
