@@ -37,7 +37,19 @@ class Landing extends React.Component {
 
           <div className="container">
             <div className="row">
-              
+              {publicQuizzes.map(quiz => (
+                <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
+                  <div className="card-body">
+                    <form>
+                      <h3>{quiz.name}</h3>
+
+                      <p>
+                        <Link to={`/quiz/${quiz.id}`}>Play</Link>
+                      </p>
+                    </form>
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>

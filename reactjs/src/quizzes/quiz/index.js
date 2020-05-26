@@ -17,7 +17,7 @@ class Quiz extends React.Component {
       quiz, questionsList, questionsData, choicesData,
     } = this.props;
 
-    if (!quiz) return null;
+    if (quiz === null) return null;
 
     return (
       <React.Fragment>

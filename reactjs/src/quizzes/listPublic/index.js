@@ -20,7 +20,9 @@ class QuizzesListPublic extends React.Component {
   render() {
     const userId = localStorage.getItem('id');
     if (!userId) return <Redirect to="/" />;
+
     const { publicQuizzes } = this.props;
+    if (publicQuizzes === null) return null;
     return (
       <React.Fragment>
         {userId && (

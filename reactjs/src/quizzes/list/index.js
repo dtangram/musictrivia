@@ -18,9 +18,12 @@ class QuizzesListPrivate extends React.Component {
   }
 
   render() {
-    const { userQuizzes } = this.props;
     const userId = localStorage.getItem('id');
     if (!userId) return <Redirect to="/" />;
+
+    const { userQuizzes } = this.props;
+    if (userQuizzes === null) return null;
+
     return (
       <React.Fragment>
         {userId && (
