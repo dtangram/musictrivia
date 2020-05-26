@@ -3,7 +3,7 @@ import { fetchPublicQuizzes } from '../../store/quizzes/actions';
 
 function mapStateToProps(state) {
   // pull the data we need out of the current state
-  const { quizzes: { publicQuizzes, byId } } = state;
+  const { quizzes: { publicQuizzes = {}, byId } } = state;
   // using the array of ids, turn the ids into the quizzes using the by id object
   const mappedQuizzes = publicQuizzes.map(id => byId[id]);
   // send them to the props of the component
