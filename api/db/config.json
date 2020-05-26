@@ -2,7 +2,7 @@
   "development": {
     "username": "douglast.angram",
     "password": null,
-    "database": "musicTrivia_development",
+    "database": "herolog_development",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
