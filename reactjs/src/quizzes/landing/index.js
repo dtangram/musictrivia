@@ -37,7 +37,7 @@ class Landing extends React.Component {
 
           <div className="container">
             <div className="row">
-              {publicQuizzes.map(quiz => (
+              {publicQuizzes && (publicQuizzes.map(quiz => (
                 <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
                   <div className="card-body">
                     <form>
@@ -49,7 +49,15 @@ class Landing extends React.Component {
                     </form>
                   </div>
                 </article>
-              ))}
+              )))}
+
+              {!publicQuizzes && (
+                <article className="card col-sm-12 col-md-12 col-lg-4">
+                  <div className="card-body">
+                    No Quizzes
+                  </div>
+                </article>
+              )}
             </div>
           </div>
         </section>
