@@ -2,7 +2,10 @@ import axios from 'axios';
 import errorLog from 'debug';
 
 const API = axios.create({
-  baseURL: process.env.API_URL || 'http://localhost:4000',
+  // baseURL: process.env.API_URL || 'http://localhost:4000',
+
+  // For Heroku Staging
+  baseURL: 'https://hero-log.herokuapp.com/',
 });
 
 API.interceptors.response.use(
