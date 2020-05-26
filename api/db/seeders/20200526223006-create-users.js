@@ -7,7 +7,7 @@ module.exports = {
         username: 'dtangram',
         email: 'dtangram@gmail.com',
         password: 'password1234',
-        accesstoken: 'abcd1234',
+        access_token: 'abcd1234',
         type: 'regular',
         createdAt: Sequelize.literal('NOW()'),
         updatedAt: Sequelize.literal('NOW()'),
