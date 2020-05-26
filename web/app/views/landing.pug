@@ -1,0 +1,25 @@
+extends _layout
+
+block content
+  section
+      h1 Music Trivia
+      .graphic(alt='Small orange, rectangle graphic.')
+      #bck.carousel.slide(data-ride='carousel')
+        ul#bckRotate.carousel-inner
+          li.carousel-item.active(title='Photo of Run-DMC on stage', alt='Photo of Run-DMC on stage')
+          li.carousel-item(title='Photo of Soundgarden', alt='Photo of Soundgarden')
+          li.carousel-item(title='Photo of LL Cool J at concert', alt='Photo of LL Cool J at concert')
+          li.carousel-item(title='Photo of Nirvana', alt='Photo of Nirvana')
+          li.carousel-item(title='Photo of Childish Gambino', alt='Photo of Childish Gambino')
+  section
+    h2 Quizzes
+    .graphic(alt='Small orange, rectangle graphic.')
+    .container
+      .row
+        for quiz in quizzes
+          article.card.col-sm-12.col-md-12.col-lg-4
+            .card-body
+              form
+                h3= quiz.name
+                p
+                  a(href='/quiz/'+quiz.id) Play

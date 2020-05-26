@@ -1,0 +1,53 @@
+// QUIZ ACTION TYPES
+// export const SET_QUIZZES = 'SET_QUIZZES';
+// export const SET_QUIZ = 'SET_QUIZ';
+// export const ADD_QUIZ = 'ADD_QUIZ';
+// export const UPDATE_QUIZ = 'UPDATE_QUIZ';
+// export const REMOVE_QUIZ = 'REMOVE_QUIZ';
+
+export const SET_USER_QUIZZES = 'SET_USER_QUIZZES';
+export const SET_PUBLIC_QUIZZES = 'SET_PUBLIC_QUIZZES';
+export const SET_QUIZ = 'SET_QUIZ';
+export const REMOVE_QUIZ = 'REMOVE_QUIZ';
+export const ADD_USER_QUIZ = 'ADD_USER_QUIZ';
+export const ADD_PUBLIC_QUIZ = 'ADD_PUBLIC_QUIZ';
+export const REMOVE_PUBLIC_QUIZ = 'REMOVE_PUBLIC_QUIZ';
+
+// QUESTION ACTION TYPES
+// export const SET_QUESTIONS = 'SET_QUESTIONS';
+// export const SET_QUESTION = 'SET_QUESTION';
+// export const ADD_QUESTION = 'ADD_QUESTION';
+// export const UPDATE_QUESTION = 'UPDATE_QUESTION';
+// export const REMOVE_QUESTION = 'REMOVE_QUESTION';
+
+export const SET_QUIZ_QUESTIONS = 'SET_QUIZ_QUESTIONS';
+export const SET_QUESTION = 'SET_QUESTION';
+export const ADD_QUIZ_QUESTION = 'ADD_QUIZ_QUESTION';
+export const REMOVE_QUESTION = 'REMOVE_QUESTION';
+
+// CHOICE ACTION TYPES
+export const SET_CHOICES = 'SET_CHOICES';
+export const SET_CHOICE = 'SET_CHOICE';
+export const ADD_CHOICE = 'ADD_CHOICE';
+export const UPDATE_CHOICE = 'UPDATE_CHOICE';
+export const REMOVE_CHOICE = 'REMOVE_CHOICE';
+
+// export const SET_QUESTION_CHOICES = 'SET_QUESTION_CHOICES';
+// export const SET_CHOICE = 'SET_CHOICE';
+// export const ADD_QUESTION_CHOICE = 'ADD_QUESTION_CHOICE';
+// export const REMOVE_CHOICE = 'REMOVE_CHOICE';
+
+// USERS ACTION TYPES
+export const SET_USER = 'SET_USER';
+export const ADD_USER = 'ADD_USER';
+export const REMOVE_USER = 'REMOVE_USER';
+
+export const SET_USER_PROFILE = 'SET_USER_PROFILE';
+export const ADD_USER_PROFILE = 'ADD_USER_PROFILE';
+export const REMOVE_USER_PROFILE = 'REMOVE_USER_PROFILE';
+
+// LOGIN ACTION TYPES
+export const SET_LOGGED_IN = 'SET_LOGGED_IN';
+
+// LOGOUT ACTION TYPES
+export const REQ_USER_LOGOUT = 'REQ_USER_LOGOUT';

@@ -1,0 +1,21 @@
+extends ../_layout
+
+block content
+  .quizWrap
+    #quizCreate
+      section.wrapper.wrapperOne
+        h2= id ? 'Edit '+ name : "Create a Quiz"
+        form(method="POST")
+          fieldset
+            label Quiz Name
+            input(type='text', name='name' value=name)
+          fieldset
+            label Quiz Type
+            input(type='radio', value='private', name='type' checked=type === 'private')
+            label.labelRadio(for='Private') Private
+            input(type='radio', value='public', name='type' checked=type === 'public')
+            label.labelRadio(for='Public') Public          
+          input#submitQ1.submit(type='submit', value='Submit')
+          if errors
+              for error in errors
+                  small.flash=error.msg

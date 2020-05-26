@@ -1,0 +1,29 @@
+//- HEADER
+header.fixed-top
+  //- LOGO
+  div
+    a(href='/')
+      div
+        div
+          img(src='/img/logo.png', title='Music Trivia Home', alt='Music Trivia Logo')
+        h1 Music Trivia
+        
+  //- NAVIGATION
+  nav.navbar.navbar-expand-lg.navbar-dark
+    .container
+      #navbarResponsive.collapse.navbar-collapse
+        if loggedIn
+          ul.navbar-nav.ml-auto
+            li.nav-item.nav-link.active.currentLink(title='Music Trivia Home')
+              a(href='/') Home
+            li.nav-item.nav-link(title='List of Quizzes')
+              a(href='/admin/quizzes/list') Quizzes
+            li.nav-item.nav-link(title='Create New Quiz')
+              a(href='/admin/quizzes/new') Create
+            li.nav-item.nav-link(title='Logout of Music Trivia')
+              a(href='/') Logout
+        else
+          ul.navbar-nav.ml-auto
+            li.nav-item.nav-link.active.currentLink(title='Login to Music Trivia')
+              a(href='/login') Login
+  .bckColor

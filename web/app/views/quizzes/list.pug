@@ -1,0 +1,14 @@
+extends ../_layout
+include ../_includes/link_mixin
+
+block content
+  .quizWrap
+    #quizList
+      section.wrapper.wrapperOne
+        for quiz in quizzes
+          h2= quiz.name
+          p
+            a(href='/quiz/'+quiz.id) Play
+            a(href='/admin/quizzes/'+quiz.id) Edit
+            a(href='/admin/quizzes/delete/'+quiz.id) Delete
+          

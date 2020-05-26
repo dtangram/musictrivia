@@ -1,0 +1,19 @@
+extends ../_layout
+
+block content
+  .quizWrap
+    #quizQuest
+      h2= quiz.name
+      for question, i in questions
+        section.wrapper
+          h3= question.title 
+          form
+            for choice, x in choices[i]
+              fieldset(id="question" + i)
+                input(id="q"+i+"a"+c type='radio', value=choice.value, name='question'+i)
+                label(for="question"+i)= choice.value
+            input#submitQ1.submit(type='submit', value='Submit')
+          if errors
+            for error in errors
+              small.flash=error.msg
+                

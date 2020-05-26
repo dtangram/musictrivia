@@ -1,0 +1,15 @@
+extends ../_layout
+
+block content
+  .quizWrap
+    #questionsCreate
+      section.wrapper.wrapperOne
+        h2= id ? 'Edit '+ title : 'Create a Question'
+        form(method="POST")
+          fieldset
+            label Question Name
+            input(type='text', name='title' value=title)
+          input#submitQ1.submit(type='submit', value='Submit')
+          if errors
+            for error in errors
+              small.flash=error.msg

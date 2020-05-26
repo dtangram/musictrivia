@@ -1,0 +1,28 @@
+extends _layout
+
+block content
+  .quizWrap
+    #quizSignup
+      section.wrapper.wrapperOne
+        h3 Sign Up
+        form(method="POST")
+          fieldset
+            label(for="username") Username
+            input(type='text', id="username", name='username')
+
+            label(for="email") Email
+            input(type='email', id="email", name='email')
+
+            label(for="password") Password
+            input(type='password', id="password", name='password')
+            
+            input(type='radio', value='github', name='type' checked=type === 'github')
+            label.labelRadio(for='github') GitHub
+            
+            input(type='radio', value='regular', name='type' checked=type === 'regular')
+            label.labelRadio(for='regular') Regular
+          input#submitQ1.submit(type='submit')
+          if errors
+            for error in errors
+              small.flash=error.msg
+          

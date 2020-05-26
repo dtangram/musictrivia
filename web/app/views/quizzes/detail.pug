@@ -1,0 +1,28 @@
+extends ../_layout
+include ../_includes/link_mixin
+
+block content
+  .quizWrap
+    #quizDetail
+      h2.quizItem= quiz.name
+        +link('/quiz/'+quiz.id)
+        +link('/admin/quizzes/edit/' +quiz.id, 'Edit')
+        +link('/admin/quizzes/delete/' +quiz.id, 'Delete')
+        p
+          a.quizLinkNew(href="/admin/questions/new/" +quiz.id) New Question
+      for question, i in questions
+        section.wrapper
+          
+          form
+            fieldset(id="question" + i)
+              label= question.title 
+                  +link('/admin/questions/edit/' +question.id, 'Edit')
+                  +link('/admin/questions/delete/' +question.id, 'Delete') 
+              ul
+                for choice, x in choices[i]
+                  li
+                    label= choice.value
+                        +link('/admin/choices/edit/' +choice.id, 'Edit')
+                        +link('/admin/choices/delete/' +choice.id, 'Delete')
+          p
+            a.quizLinkNew(href='/admin/choices/new/' +question.id) New Choice

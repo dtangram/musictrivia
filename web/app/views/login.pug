@@ -1,0 +1,26 @@
+extends _layout
+
+block content
+  .quizWrap
+    #quizLogin
+      section.wrapper.wrapperOne
+        h3 Login
+        form(method="POST")
+          fieldset
+            label(for="login-username") Username
+            input(type='username',id="login-username", name='username')
+            label(for="login-password") Password
+            input(type='password',id="login-password", name='password')
+          input#submitQ1.submit(type='submit')
+          if errors
+            for error in errors
+              small.flash=error.msg
+        div
+          p
+            a(href='https://github.com/login/oauth/authorize?client_id=116dde797c68291268c9&redirect_uri=http://localhost:3000/login')
+                i.fab.fa-github
+                span &nbsp; Login with Github
+            a(href='/signup') Need an Account?
+        
+          
+//- Added redirect to login button.

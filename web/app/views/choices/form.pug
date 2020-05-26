@@ -1,0 +1,21 @@
+extends ../_layout
+
+block content
+  .quizWrap
+    #choicesCreate
+      section.wrapper.wrapperOne
+        h2= id ? 'Edit '+ value : "Create a Choice"
+        form(method="POST")
+          fieldset
+            label Choice Name
+            input(type='text', name='value' value=value)
+          fieldset
+            label Choice Type
+            input(type='radio', value='correct', name='type' checked=type === 'correct')
+            label.labelRadio(for='correct') Correct
+            input(type='radio', value='incorrect', name='type' checked=type === 'incorrect')
+            label.labelRadio(for='incorrect') Incorrect
+          input#submitQ1.submit(type='submit', value='Submit')
+          if errors
+              for error in errors
+                  small.flash=error.msg
