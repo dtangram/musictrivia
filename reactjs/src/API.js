@@ -2,10 +2,7 @@ import axios from 'axios';
 import errorLog from 'debug';
 
 const API = axios.create({
-  // baseURL: process.env.API_URL || 'http://localhost:4000',
-
-  // For Heroku Staging
-  baseURL: 'https://musictriviaquiz.herokuapp.com/',
+  baseURL: process.env.API_URL || 'http://localhost:4000',
 });
 
 API.interceptors.response.use(

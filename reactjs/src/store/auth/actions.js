@@ -13,8 +13,8 @@ export const loginUser = auth => async (dispatch) => {
   const { username, password } = auth;
   await API.post('/auth/login', { username, password })
     .then((res) => {
-      console.log('username: ', username, 'password: ', password);
-      console.log('res: ', res);
+      // console.log('username: ', username, 'password: ', password);
+      // console.log('res: ', res);
 
       if (res && res.token) {
         localStorage.setItem('token', res.token);
