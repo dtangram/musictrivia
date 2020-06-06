@@ -26,7 +26,7 @@ export function arrayToObject(array) {
     }), {});
   }
 
-  return {};
+  return array;
 }
 
 // given an object and id remove the key of the id from the object
