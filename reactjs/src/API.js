@@ -2,7 +2,7 @@ import axios from 'axios';
 import errorLog from 'debug';
 
 const API = axios.create({
-  baseURL: process.env.API_URL || 'http://localhost:4000',
+  baseURL: 'https://musictriviaquiz.herokuapp.com/',
 });
 
 API.interceptors.response.use(
