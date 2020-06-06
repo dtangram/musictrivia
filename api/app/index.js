@@ -25,15 +25,15 @@ app.use(bodyParser.json());
 app.use(morganDebug('api:request', 'dev'));
 
 // setup the app to use the router at /quizzes
-app.use('/quizzes', quizRouter);
+app.use('/api/quizzes', quizRouter);
 // setup the app to use the router at /questions
-app.use('/questions', questionRouter);
+app.use('/api/questions', questionRouter);
 // setup the app to use the router at /choices
-app.use('/choices', choiceRouter);
+app.use('/api/choices', choiceRouter);
 // setup the app to use the router at /auth
-app.use('/auth', authRouter);
+app.use('/api/auth', authRouter);
 // setup the app to use the router at /auth
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
 
 // four params are required to mark this as a error handling middleware
 // eslint-disable-next-line no-unused-vars
