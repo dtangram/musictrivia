@@ -16,17 +16,13 @@ export function shouldLoad(loadedAt, refreshAt = refreshTime) {
 
 // turn an array into an object using the id of the items as the key
 export function arrayToObject(array) {
-  if (!array) {
-    // use the reduce function to convert the array to an object
-    return array.reduce((object, item) => ({
-      // keep the current object
-      ...object,
-      // add the item id as the key and the item as the value
-      [item.id]: item,
-    }), {});
-  }
-
-  return array || [];
+  // use the reduce function to convert the array to an object
+  return array.reduce((object, item) => ({
+    // keep the current object
+    ...object,
+    // add the item id as the key and the item as the value
+    [item.id]: item,
+  }), {});
 }
 
 // given an object and id remove the key of the id from the object

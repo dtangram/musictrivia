@@ -57,7 +57,7 @@ export default function quizzesReducer(state = startState, action) {
 
     // if type is SET_PUBLIC_QUIZZES
     case SET_PUBLIC_QUIZZES: {
-      const { publicQuizzes = {} } = payload;
+      const { publicQuizzes } = payload;
       return {
         // return a new object that has all the properties of the current state
         ...state,
