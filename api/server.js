@@ -20,9 +20,9 @@ app.use(express.static(path.join(__dirname, '../reactjs/build')));
 
 // Heroku Server
 // Handle React routing, return all requests to React app
-app.get('/api/app', (req, res) => {
-  res.sendFile(path.join(__dirname, '../reactjs/build', 'index.html'));
-});
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname, '../reactjs/build', 'index.html'));
+// });
 
 // spin up the server and log what port it is running on - Heroku Server and Node Server
 app.listen(port, () => log(`API listening on port ${port}!`));
