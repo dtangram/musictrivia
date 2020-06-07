@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, '../reactjs/build')));
 
 // Heroku Server
 // Handle React routing, return all requests to React app
-app.get('*', (req, res) => {
+app.get('/api/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../reactjs/build', 'index.html'));
 });
 
