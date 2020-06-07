@@ -16,7 +16,7 @@ const port = process.env.PORT || 5000;
 
 // Heroku Server
 // Serve any static files
-app.use(express.static(path.join(__dirname, '../reactjs/build', 'index.html')));
+app.use(express.static(path.join(__dirname, '../reactjs/build')));
 
 // Heroku Server
 // Handle React routing, return all requests to React app
