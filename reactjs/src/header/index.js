@@ -39,8 +39,8 @@ class Header extends React.Component {
                 <React.Fragment>
                   <ul className="navbar-nav ml-auto">
                     <li className="nav-item nav-link active currentLink" title="Music Trivia Home"><Link to="/">Home</Link></li>
-                    <li className="nav-item nav-link" title="List of Private"><Link to="/admin/quizzes/private">Private</Link></li>
-                    <li className="nav-item nav-link" title="List of Public"><Link to="/admin/quizzes/public">Public</Link></li>
+                    <li className="nav-item nav-link" title="List of Private"><Link to="/admin/quizzes/privateQuiz">Private</Link></li>
+                    <li className="nav-item nav-link" title="List of Public"><Link to="/admin/quizzes/publicQuiz">Public</Link></li>
                     <li className="nav-item nav-link" title="Create New Quiz"><Link to="/admin/quizzes/new">Create</Link></li>
                     <li className="nav-item nav-link" title="Create New Quiz"><Link to="" onClick={() => this.logUserOut()}>Logout</Link></li>
                   </ul>
