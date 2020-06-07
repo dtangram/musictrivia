@@ -1,4 +1,4 @@
-import uuid from 'uuidv4';
+import uuid from 'uuid';
 import API from '../../API';
 import {
   SET_USER,
