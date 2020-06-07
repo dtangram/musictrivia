@@ -33,7 +33,7 @@ export const fetchUser = id => async (dispatch, getState) => {
 // };
 
 export const createUser = signup => async (dispatch) => {
-  const id = uuid;
+  const id = uuid();
   const newsignup = await API.post('/users', signup);
   // add the new signup
   dispatch({ type: SET_USER, signup: { ...signup, ...newsignup } });
