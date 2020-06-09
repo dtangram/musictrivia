@@ -2,7 +2,7 @@
   "development": {
     "username": "douglast.angram",
     "password": null,
-    "database": "musictrivia_development",
+    "database": "musictrivia",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
