@@ -4,7 +4,7 @@ import errorLog from 'debug';
 const API = axios.create({
   // baseURL: 'https://musictriviaquiz.herokuapp.com/',
   // For Heroku
-  baseURL: process.env.DATABASE_URL || 'http://localhost:5000',
+  baseURL: process.env.DATABASE_URL || 'https://musictriviaquiz.herokuapp.com/',
 });
 
 API.interceptors.response.use(
