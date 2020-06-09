@@ -66,7 +66,7 @@ export default function quizzesReducer(state = startState, action) {
           // keep all the current quizzes
           ...state.byId,
           // turn the array of quizzes into an object that has the ids as keys
-          ...arrayToObject(publicQuizzes),
+          ...arrayToObject(publicQuizzes || []),
         },
         // add the publicQuizzes from the payload
         // publicQuizzes,
