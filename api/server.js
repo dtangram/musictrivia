@@ -1,6 +1,5 @@
 // Heroku Server
 const express = require('express');
-const proxy = require('http-proxy-middleware');
 
 // Heroku Server
 const path = require('path');
@@ -16,8 +15,6 @@ const app = require('./app');
 const port = process.env.PORT || 5000;
 
 // Heroku Server
-app.use(proxy('*', { target: 'http://localhost:5000/' }));
-
 // Serve any static files
 app.use(express.static(path.join(__dirname, '../reactjs/build')));
 
