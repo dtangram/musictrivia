@@ -12,7 +12,7 @@
     "dev": "concurrently --raw \"npm run api\" \"npm run web\"",
     "dev:react": "concurrently --raw \"npm run api\" \"npm run react\"",
     "react": "cd reactjs && npm run start",
-    "api": "cd api; nodemon",
+    "api": "cd api; nodemon server.js",
     "web": "cd web; nodemon server.js",
     "install-reactjs": "npm install --prefix reactjs",
     "install-api": "npm install --prefix api",
