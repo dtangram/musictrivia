@@ -14,7 +14,6 @@ class Landing extends React.Component {
     const userId = localStorage.getItem('id');
     const { publicQuizzes } = this.props;
 
-    if (publicQuizzes === null) return null;
     return (
       <React.Fragment>
         <section>
