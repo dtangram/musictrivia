@@ -1,5 +1,4 @@
 import React from 'react';
-import RRPropTypes from 'react-router-prop-types';
 import PropTypes from 'prop-types';
 import '../../css/main.css';
 import { Redirect } from 'react-router-dom';
@@ -8,8 +7,8 @@ import container from './container';
 
 class QuizzesListPrivate extends React.Component {
   componentDidMount() {
-    const { fetchUserQuizzes, match: { params: { id } } } = this.props;
-    fetchUserQuizzes(id);
+    const { fetchUserQuizzes } = this.props;
+    fetchUserQuizzes();
   }
 
   delete = async (id) => {
@@ -20,10 +19,9 @@ class QuizzesListPrivate extends React.Component {
 
   render() {
     const userId = localStorage.getItem('id');
-    // if (!userId) return <Redirect to="/" />;
+    if (!userId) return <Redirect to="/" />;
 
-    const { userQuizzes, match: { params: { id } } } = this.props;
-    if (!id) return <Redirect to="/" />;
+    const { userQuizzes } = this.props;
 
     return (
       <React.Fragment>
@@ -59,7 +57,6 @@ QuizzesListPrivate.propTypes = {
     }),
   ),
   deleteQuiz: PropTypes.func.isRequired,
-  match: RRPropTypes.match.isRequired,
 };
 
 

@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/login" exact component={Login} />
             <Route path="/signup" exact component={Signup} />
             <Switch>
-              <Route path="/" exact component={Landing} />
+              <Route path="/:userId/" exact component={Landing} />
               <Route path="/admin/quizzes/new" exact component={QuizzesForm} />
               <Route path="/admin/quizzes/edit/:id" exact component={QuizzesForm} />
               <Route path="/admin/:quizId/questions/new" exact component={QuestionsForm} />
@@ -40,8 +40,8 @@ class App extends Component {
               <Route path="/admin/:questionId/choices/edit/:id" exact component={ChoicesForm} />
               <Route path="/quiz/:id" exact component={Quiz} />
               <Route path="/admin/quizzes/detail/:id" exact component={QuizzesDetail} />
-              <Route path="/admin/quizzes/privateQuiz/:userId" exact component={QuizzesListPrivate} />
-              <Route path="/admin/quizzes/publicQuiz/:userId" exact component={QuizzesListPublic} />
+              <Route path="/admin/quizzes/:userId/privateQuiz" exact component={QuizzesListPrivate} />
+              <Route path="/admin/quizzes/:userId/publicQuiz" exact component={QuizzesListPublic} />
             </Switch>
             <Route path="/" exact component={Footer} />
           </div>
