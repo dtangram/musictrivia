@@ -17,6 +17,7 @@ class Header extends React.Component {
 
   render() {
     const userId = localStorage.getItem('id');
+    const { loggedIn } = this.props;
     return (
       // HEADER
       <header className="fixed-top">
@@ -43,6 +44,10 @@ class Header extends React.Component {
                     <li className="nav-item nav-link" title="Create New Quiz"><Link to="/admin/quizzes/new">Create</Link></li>
                     <li className="nav-item nav-link" title="Create New Quiz"><Link to="" onClick={() => this.logUserOut()}>Logout</Link></li>
                   </ul>
+
+                  {
+                    console.log(loggedIn)
+                  }
                 </React.Fragment>
               )}
 
@@ -66,12 +71,13 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
+  loggedIn: PropTypes.bool,
   logout: PropTypes.func.isRequired,
   history: RRPropTypes.history.isRequired,
 };
 
 Header.defaultProps = {
-
+  loggedIn: true,
 };
 
 export default HeaderContainer(Header);
