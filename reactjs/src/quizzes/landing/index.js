@@ -12,6 +12,7 @@ class Landing extends React.Component {
 
   render() {
     const { publicQuizzes } = this.props;
+    const userId = localStorage.getItem('id');
 
     return (
       <React.Fragment>
@@ -36,7 +37,7 @@ class Landing extends React.Component {
 
           <div className="container">
             <div className="row">
-              {publicQuizzes.map(quiz => (
+              {userId && publicQuizzes.map(quiz => (
                 <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
                   <div className="card-body">
                     <form>
