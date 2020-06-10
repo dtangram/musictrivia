@@ -62,7 +62,7 @@ export default function quizzesReducer(state = startState, action) {
         // return a new object that has all the properties of the current state
         ...state,
         // publicQuiz object with the ids as the key
-        byId: arrayToObject(...state.byId, publicQuizzes),
+        byId: arrayToObject(state.byId, publicQuizzes),
         // byId: {
         //   // keep all the current quizzes
         //   ...state.byId,
