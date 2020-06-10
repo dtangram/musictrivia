@@ -25,7 +25,7 @@ class QuizzesListPublic extends React.Component {
 
     return (
       <React.Fragment>
-        {(<h3>No Quizzes</h3>) ? !userId : (
+        {userId && (
           <div className="quizWrap">
             <div id="quizList">
               {publicQuizzes.map(quiz => (
