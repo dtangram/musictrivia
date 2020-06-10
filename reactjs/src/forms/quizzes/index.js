@@ -62,7 +62,7 @@ class QuizzesForm extends React.Component {
 
     const userId = localStorage.getItem('id');
 
-    if (userId) {
+    if (id) {
       updateQuiz({
         id,
         name,

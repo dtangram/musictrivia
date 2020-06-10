@@ -11,7 +11,7 @@ const protectedRoute = require('../utils/protectedRoute');
 router.get('/', questionCtrl.getQuizQuestions);
 
 // POST /questions
-router.post('/', protectedRoute, questionCtrl.createQuestion);
+router.post('/', questionCtrl.createQuestion);
 
 // GET /questions/:id
 router.get('/:id', questionCtrl.getOneById);

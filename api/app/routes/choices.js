@@ -11,7 +11,7 @@ const protectedRoute = require('../utils/protectedRoute');
 router.get('/', choiceCtrl.getQuestionChoices);
 
 // POST /choices
-router.post('/', protectedRoute, choiceCtrl.createChoice);
+router.post('/', choiceCtrl.createChoice);
 
 // GET /choices/:id
 router.get('/:id', choiceCtrl.getOneById);

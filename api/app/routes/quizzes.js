@@ -17,7 +17,7 @@ router.get('/publicQuiz', quizCtrl.getPublic);
 router.get('/privateQuiz', quizCtrl.getPrivate);
 
 // POST /quizzes
-router.post('/', protectedRoute, quizCtrl.createQuiz);
+router.post('/', quizCtrl.createQuiz);
 
 // GET /quizzes/:id
 router.get('/:id', quizCtrl.getOneById);
