@@ -31,7 +31,7 @@ class App extends Component {
             <Route path="/login" exact component={Login} />
             <Route path="/signup" exact component={Signup} />
             <Switch>
-              <Route path="/:userId" exact component={Landing} />
+              <Route path="/" exact component={Landing} />
               <Route path="/admin/quizzes/new" exact component={QuizzesForm} />
               <Route path="/admin/quizzes/edit/:id" exact component={QuizzesForm} />
               <Route path="/admin/:quizId/questions/new" exact component={QuestionsForm} />

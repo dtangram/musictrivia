@@ -1,12 +1,10 @@
 import axios from 'axios';
 import errorLog from 'debug';
 
-const userId = localStorage.getItem('id');
-
 const API = axios.create({
   // baseURL: 'https://musictriviaquiz.herokuapp.com/',
   // For Heroku
-  baseURL: process.env.DATABASE_URL || `https://musictriviaquiz.herokuapp.com/${userId}`,
+  baseURL: process.env.DATABASE_URL || 'https://musictriviaquiz.herokuapp.com/',
 });
 
 API.interceptors.response.use(
