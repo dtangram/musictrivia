@@ -77,7 +77,7 @@ Header.propTypes = {
 };
 
 Header.defaultProps = {
-  loggedIn: false,
+  loggedIn: true,
 };
 
 export default HeaderContainer(Header);
