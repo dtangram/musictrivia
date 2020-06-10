@@ -45,7 +45,6 @@ class Landing extends React.Component {
 
                       <p>
                         <Link to={`/quiz/${quiz.id}`}>Play</Link>
-                        {userId}
                       </p>
                     </form>
                   </div>

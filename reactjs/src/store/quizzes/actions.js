@@ -11,6 +11,8 @@ import API from '../../API';
 import { shouldLoad } from '../_utils';
 import { fetchQuizQuestions } from '../questions/actions';
 
+const userId = localStorage.getItem('id');
+
 export const fetchQuiz = id => async (dispatch, getState) => {
   // pull the quiz out of the state
   const { quizzes: { byId: { [id]: existingQuiz } } } = getState();
@@ -19,7 +21,7 @@ export const fetchQuiz = id => async (dispatch, getState) => {
   // if the quiz already exists, don't do anything
   if (existingQuiz) return;
   // get the details of the quiz
-  const quiz = await API.get(`/quizzes/${id}`);
+  const quiz = await API.get(`/quizzes/${userId}`);
   // update the state with the quiz
   dispatch({ type: SET_QUIZ, quiz });
 };

@@ -1,13 +1,25 @@
 // load in the quiz Model
 const { Quizzes } = require('../models');
 
-// exports.getUserQuizzes = async (req, res) => {
-//   // run the find all function on the model
-//   // filter the quizzes to only quizzes that were created by this user
-//   const userQuizzes = await Quizzes.findAll({ where: { userId: req.params.userId } });
-//   // respond with json of the user decisions array
-//   res.json(userQuizzes);
-// };
+exports.getUserQuizzes = async (req, res) => {
+  const { userId } = req.params;
+
+  try {
+    const userQuiz = await Quizzes.findAll({
+      where: { userId },
+    });
+    // Use for endpoints
+    // const { publisherName } = req.body;
+    // const collectPublishers = await CollectionPublishers.findAll({ where: { publisherName } });
+
+    // respond with json of the public questions array
+    res.json(userQuiz);
+  } catch (e) {
+    // map the errors messages to send them back
+    const errors = e.errors.map(err => err.message);
+    res.status(500).json({ errors });
+  }
+};
 
 // get all the quizzes with a type of public
 exports.getPublic = async (req, res) => {
@@ -45,14 +57,18 @@ exports.getOneById = async (req, res) => {
 // add a new quiz
 exports.createQuiz = async (req, res) => {
   // get the name, type and userId values from the request body
-  const { name, type, userId, id: quizId } = req.body;
+  const {
+    name, type, userId, id: quizId,
+  } = req.body;
 
   // const { userId } = req.userId;
 
   try {
     // create the item and save the new id
     // const newQuiz = await Quizzes.create({ name, type, userId });
-    const newQuiz = await Quizzes.create({ name, type, userId, quizId });
+    const newQuiz = await Quizzes.create({
+      name, type, userId, quizId,
+    });
 
     // send the new id back to the request
     res.json({ id: newQuiz.id });
