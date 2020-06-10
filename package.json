@@ -9,11 +9,9 @@
   "proxy": "http://localhost:5000",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently --raw \"npm run api\" \"npm run web\"",
-    "dev:react": "concurrently --raw \"npm run api\" \"npm run react\"",
     "react": "cd reactjs && npm run start",
-    "api": "cd api; nodemon server.js",
-    "web": "cd web; nodemon server.js",
+    "start": "npm start nodemon server.js --prefix api",
+    "dev:react": "concurrently --raw \"npm run start\" \"npm run react\"",
     "install-reactjs": "npm install --prefix reactjs",
     "install-api": "npm install --prefix api",
     "build-reactjs": "npm run build --prefix reactjs",
