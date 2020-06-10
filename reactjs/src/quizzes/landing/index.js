@@ -38,7 +38,7 @@ class Landing extends React.Component {
 
           <div className="container">
             <div className="row">
-              {<h3>No Quizzes</h3> ? !userId : publicQuizzes.map(quiz => (
+              {(<h3>No Quizzes</h3>) ? !userId : publicQuizzes.map(quiz => (
                 <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
                   <div className="card-body">
                     <form>
