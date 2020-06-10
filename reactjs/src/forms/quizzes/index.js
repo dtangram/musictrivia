@@ -69,9 +69,9 @@ class QuizzesForm extends React.Component {
         type,
       }).then(() => {
         if (type === 'public') {
-          history.push('/admin/quizzes/publicQuiz');
+          history.push(`/admin/quizzes/publicQuiz/${userId}`);
         } else if (type === 'private') {
-          history.push('/admin/quizzes/privateQuiz');
+          history.push(`/admin/quizzes/privateQuiz/${userId}`);
         }
       });
     } else {
@@ -81,9 +81,9 @@ class QuizzesForm extends React.Component {
         userId,
       }).then(() => {
         if (type === 'public') {
-          history.push('/admin/quizzes/publicQuiz');
+          history.push(`/admin/quizzes/publicQuiz/${userId}`);
         } else if (type === 'private') {
-          history.push('/admin/quizzes/privateQuiz');
+          history.push(`/admin/quizzes/privateQuiz/${userId}`);
         }
       });
     }
