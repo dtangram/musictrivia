@@ -11,7 +11,6 @@ class Landing extends React.Component {
   }
 
   render() {
-    const userId = localStorage.getItem('id');
     const { publicQuizzes } = this.props;
 
     if (publicQuizzes === null) return null;
@@ -38,11 +37,7 @@ class Landing extends React.Component {
 
           <div className="container">
             <div className="row">
-              {!publicQuizzes ? !userId : (
-                <h3>No Quizzes</h3>
-              )}
-
-              {userId && publicQuizzes.map(quiz => (
+              {publicQuizzes.map(quiz => (
                 <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
                   <div className="card-body">
                     <form>
