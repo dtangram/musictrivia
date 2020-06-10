@@ -38,7 +38,7 @@ class Landing extends React.Component {
 
           <div className="container">
             <div className="row">
-              {!userId && (
+              {!publicQuizzes ? !userId : (
                 <h3>No Quizzes</h3>
               )}
 
