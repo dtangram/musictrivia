@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../../css/main.css';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import LandingContainer from './container';
 
 class Landing extends React.Component {
@@ -11,8 +11,8 @@ class Landing extends React.Component {
   }
 
   render() {
-    const userId = localStorage.getItem('id');
-    const { publicQuizzes } = this.props;
+    // const userId = localStorage.getItem('id');
+    // const { publicQuizzes } = this.props;
 
     return (
       <React.Fragment>
@@ -37,20 +37,22 @@ class Landing extends React.Component {
 
           <div className="container">
             <div className="row">
-              {!userId ? (<h3>No Quizzes</h3>) : userId && publicQuizzes.map(quiz => (
-                <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
-                  <div className="card-body">
-                    <form>
-                      <h3>{quiz.name}</h3>
-
-                      <p>
-                        <Link to={`/quiz/${quiz.id}`}>Play</Link>
-                        {userId}
-                      </p>
-                    </form>
-                  </div>
-                </article>
-              ))}
+              {
+                // {!userId ? (<h3>No Quizzes</h3>) : userId && publicQuizzes.map(quiz => (
+                //   <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
+                //     <div className="card-body">
+                //       <form>
+                //         <h3>{quiz.name}</h3>
+                //
+                //         <p>
+                //           <Link to={`/quiz/${quiz.id}`}>Play</Link>
+                //           {userId}
+                //         </p>
+                //       </form>
+                //     </div>
+                //   </article>
+                // ))}
+              }
             </div>
           </div>
         </section>
@@ -60,12 +62,12 @@ class Landing extends React.Component {
 }
 
 Landing.propTypes = {
-  publicQuizzes: PropTypes.arrayOf(PropTypes.object),
+  // publicQuizzes: PropTypes.arrayOf(PropTypes.object),
   fetchPublicQuizzes: PropTypes.func.isRequired,
 };
 
 Landing.defaultProps = {
-  publicQuizzes: [],
+  // publicQuizzes: [],
   // userQuizzes: [],
 };
 
