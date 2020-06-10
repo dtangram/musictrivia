@@ -22,7 +22,6 @@ class QuizzesListPrivate extends React.Component {
     if (!userId) return <Redirect to="/" />;
 
     const { userQuizzes } = this.props;
-    if (userQuizzes === null) return null;
 
     return (
       <React.Fragment>

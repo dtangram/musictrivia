@@ -13,7 +13,6 @@ class Landing extends React.Component {
   render() {
     const { publicQuizzes } = this.props;
 
-    if (publicQuizzes === null) return null;
     return (
       <React.Fragment>
         <section>

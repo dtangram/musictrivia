@@ -22,7 +22,7 @@ class QuizzesListPublic extends React.Component {
     if (!userId) return <Redirect to="/" />;
 
     const { publicQuizzes } = this.props;
-    if (publicQuizzes === null) return null;
+
     return (
       <React.Fragment>
         {userId && (
