@@ -1,4 +1,4 @@
-import { v4 as uuid } from 'uuid';
+// import { v4 as uuid } from 'uuid';
 import API from '../../API';
 import {
   SET_USER,
@@ -33,11 +33,11 @@ export const fetchUser = id => async (dispatch, getState) => {
 // };
 
 export const createUser = signup => async (dispatch) => {
-  const id = uuid();
+  // const id = uuid();
   const newsignup = await API.post('/users', signup);
   // add the new signup
   dispatch({ type: SET_USER, signup: { ...signup, ...newsignup } });
-  dispatch({ type: ADD_USER, id });
+  dispatch({ type: ADD_USER, id: newsignup.id, signup });
 };
 
 export const updateUser = user => async (dispatch) => {
