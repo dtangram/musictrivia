@@ -1,13 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RRPropTypes from 'react-router-prop-types';
 import '../../css/main.css';
 import { Link } from 'react-router-dom';
 import LandingContainer from './container';
 
 class Landing extends React.Component {
   componentDidMount() {
-    const { fetchPublicQuizzes } = this.props;
-    fetchPublicQuizzes();
+    const { fetchPublicQuizzes, match: { params: { userId = localStorage.getItem('id') } } } = this.props;
+    fetchPublicQuizzes(userId);
   }
 
   render() {
@@ -61,6 +62,7 @@ class Landing extends React.Component {
 Landing.propTypes = {
   publicQuizzes: PropTypes.arrayOf(PropTypes.object),
   fetchPublicQuizzes: PropTypes.func.isRequired,
+  match: RRPropTypes.match.isRequired,
 };
 
 Landing.defaultProps = {
