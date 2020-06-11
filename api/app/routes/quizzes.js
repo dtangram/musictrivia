@@ -11,10 +11,10 @@ const protectedRoute = require('../utils/protectedRoute');
 // router.get('/quizzes', quizCtrl.getUserQuizzes);
 
 // GET /quizzes/public
-router.get('/:userId/publicQuiz', quizCtrl.getPublic);
+router.get('/publicQuiz/pubQuiz/:userId', quizCtrl.getPublic);
 
 // GET /quizzes route using controller middleware
-router.get('/:userId/privateQuiz', quizCtrl.getPrivate);
+router.get('/privateQuiz/privQuiz/:userId', quizCtrl.getPrivate);
 
 // POST /quizzes
 router.post('/', quizCtrl.createQuiz);
