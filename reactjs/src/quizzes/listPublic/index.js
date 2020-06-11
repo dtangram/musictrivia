@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import RRPropTypes from 'react-router-prop-types';
 import '../../css/main.css';
 import { Redirect } from 'react-router-dom';
 import Link from '../../link';
@@ -8,8 +7,8 @@ import container from './container';
 
 class QuizzesListPublic extends React.Component {
   componentDidMount() {
-    const { fetchPublicQuizzes, match: { params: { userId = localStorage.getItem('id') } } } = this.props;
-    fetchPublicQuizzes(userId);
+    const { fetchPublicQuizzes } = this.props;
+    fetchPublicQuizzes();
   }
 
   delete = async (id) => {
@@ -19,11 +18,10 @@ class QuizzesListPublic extends React.Component {
   }
 
   render() {
-    // const userId = localStorage.getItem('id');
-    // if (!userId) return <Redirect to="/" />;
-
-    const { publicQuizzes, match: { params: { userId = localStorage.getItem('id') } } } = this.props;
+    const userId = localStorage.getItem('id');
     if (!userId) return <Redirect to="/" />;
+
+    const { publicQuizzes } = this.props;
 
     return (
       <React.Fragment>
@@ -59,7 +57,6 @@ QuizzesListPublic.propTypes = {
     }),
   ),
   deleteQuiz: PropTypes.func.isRequired,
-  match: RRPropTypes.match.isRequired,
 };
 
 

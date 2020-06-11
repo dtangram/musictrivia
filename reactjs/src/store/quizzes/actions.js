@@ -67,7 +67,7 @@ export const fetchUserQuizzes = () => async (dispatch, getState) => {
   // if the last time these quizzes was loaded was longer than the refresh time
   if (!shouldLoad(userQuizzesLoadedAt)) return;
   // get the user quizzes from the api
-  const userQuizzes = await API.get(`/quizzes/privQuiz/${userId}/privateQuiz`);
+  const userQuizzes = await API.get(`/quizzes/privateQuiz/${userId}`);
   // update the state
   dispatch({ type: SET_USER_QUIZZES, userQuizzes });
 };
@@ -79,7 +79,7 @@ export const fetchPublicQuizzes = () => async (dispatch, getState) => {
   // if the last time these quizzes was loaded was longer than the refresh time
   if (!shouldLoad(publicQuizzesLoadedAt)) return;
   // get the public quizzes from the api
-  const publicQuizzes = await API.get(`/quizzes/pubQuiz/${userId}/publicQuiz`);
+  const publicQuizzes = await API.get(`/quizzes/publicQuiz/${userId}`);
   // update the state
   dispatch({ type: SET_PUBLIC_QUIZZES, publicQuizzes });
 };
