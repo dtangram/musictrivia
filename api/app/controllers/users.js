@@ -4,10 +4,12 @@ const { Users } = require('../models');
 
 exports.getUsers = async (req, res) => {
   // get the id from the url params
-  const { id } = req.params;
-  // run the find all function on the model
-  // filter the decisions to only decisions that were created by this user
-  const userUsers = await Users.findAll({ where: { id } });
+  const { userId } = req.params;
+  const userUsers = await Users.findAll({ where: { id: userId } });
+  // const { id } = req.params;
+  // // run the find all function on the model
+  // // filter the decisions to only decisions that were created by this user
+  // const userUsers = await Users.findAll({ where: { id } });
   // respond with json of the user decisions array
   res.json(userUsers);
 };
