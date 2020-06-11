@@ -41,9 +41,9 @@ export const createQuiz = quiz => async (dispatch) => {
   // add the new quiz
   dispatch({ type: SET_QUIZ, quiz: { ...quiz, ...createdQuiz } });
   // append the id to the user's list
-  dispatch({ type: ADD_USER_QUIZ, id: createdQuiz.id, userId: quiz.userId });
+  dispatch({ type: ADD_USER_QUIZ, id, quiz });
   // if it's public add it to the public quizzes
-  if (quiz.type === 'public') dispatch({ type: ADD_PUBLIC_QUIZ, id, userId: quiz.userId });
+  if (quiz.type === 'public') dispatch({ type: ADD_PUBLIC_QUIZ, id, quiz });
 
   return quiz;
 };
