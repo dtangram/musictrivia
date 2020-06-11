@@ -17,5 +17,5 @@ $(document).ready(() => {
   /* AUTOMATIC COPYRIGHT YEAR CHANGE */
   const today = new Date();
   const year = today.getFullYear();
-  $('footer div:nth-child(1) p').html(`${year}, Music Trivia. All rights reserved.`);
+  $('footer div:nth-child(1) p').html(`©${year}, Music Trivia. All rights reserved.`);
 });

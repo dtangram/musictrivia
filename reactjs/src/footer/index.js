@@ -14,7 +14,7 @@ class Footer extends React.Component {
     return (
       <footer>
         <div>
-          <p title="©2019, Music Trivia. All rights reserved." />
+          <p title="" />
           <div>
             <img src={facebook} alt="Music Trivia Facebook" />
             <img src={twitter} alt="Music Trivia Twitter" />
