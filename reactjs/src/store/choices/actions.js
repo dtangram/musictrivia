@@ -1,3 +1,4 @@
+import { v4 as uuid } from 'uuid';
 import API from '../../API';
 import {
   SET_CHOICES,
@@ -30,11 +31,12 @@ export const fetchChoice = id => async (dispatch, getState) => {
 };
 
 export const createChoice = choice => async (dispatch) => {
+  const id = uuid();
   // make the create api call to make a new choice
   const newchoice = await API.post('/choices', choice);
   // add the new choice
   dispatch({ type: SET_CHOICE, choice: { ...choice, ...newchoice } });
-  dispatch({ type: ADD_CHOICE, id: newchoice.id, questionId: choice.questionId });
+  dispatch({ type: ADD_CHOICE, id, questionId: choice.questionId });
 };
 
 // export const saveChoice = choice => async (dispatch) => {
