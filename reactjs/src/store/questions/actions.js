@@ -1,4 +1,3 @@
-import { v4 as uuid } from 'uuid';
 import API from '../../API';
 import {
   SET_QUIZ_QUESTIONS,
@@ -59,12 +58,11 @@ export const fetchQuestion = id => async (dispatch, getState) => {
 // };
 
 export const createQuestion = question => async (dispatch) => {
-  const id = uuid();
   // make the create api call to make a new question
   const newQuestion = await API.post('/questions', question);
   // add the new question
   dispatch({ type: SET_QUESTION, question: { ...question, ...newQuestion } });
-  dispatch({ type: ADD_QUIZ_QUESTION, id, quizId: question.quizId });
+  dispatch({ type: ADD_QUIZ_QUESTION, id: newQuestion.id, question });
 };
 
 export const updateQuestion = question => async (dispatch) => {
