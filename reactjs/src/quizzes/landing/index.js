@@ -33,15 +33,17 @@ class Landing extends React.Component {
         </section>
 
         <section>
-          <h2>Quizzes</h2>
-          <div className="graphic" alt="Small orange, rectangle graphic." />
+          <h2>
+            Quizzes
+            <div className="graphic" alt="Small orange, rectangle graphic." />
+          </h2>
 
           <div className="container">
             <div className="row">
               {!userId ? (<h3>No Quizzes</h3>) : userId && publicQuizzes.map(quiz => (
-                <article className="card col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
-                  <div className="card-body">
-                    <form>
+                <article className="col-sm-12 col-md-12 col-lg-4" key={quiz.id}>
+                  <div className="card">
+                    <form className="card-body">
                       <h3>{quiz.name}</h3>
 
                       <p>

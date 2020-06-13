@@ -33,17 +33,15 @@ class QuizzesDetail extends React.Component {
           <div id="quizDetail">
             <h2 className="quizItem">
               {quiz.name}
-              {
-                // <Link url={`/quiz/${quiz.id}`} />
-              }
-              <Link url={`/admin/quizzes/edit/${quiz.id}`} title="Edit" />
-              {
-                // <Link url={`/admin/quizzes/delete/${quizzes.id}`} title="Delete" />
-              }
-              <p>
-                <Link className="quizLinkNew" url={`/admin/${quiz.id}/questions/new`} title="New Question" />
-              </p>
+              <br />
+
+              <Link url={`/admin/quizzes/edit/${quiz.id}`} title="Edit Quiz Name" />
+              <div className="graphic" alt="Small orange, rectangle graphic." />
             </h2>
+
+            <p>
+              <Link className="quizLinkNew" url={`/admin/${quiz.id}/questions/new`} title="Add New Question" />
+            </p>
 
             {questionsList.map((questionId) => {
               const question = questionsData[questionId];
@@ -75,7 +73,7 @@ class QuizzesDetail extends React.Component {
                   </form>
 
                   <p>
-                    <Link className="quizLinkNew" url={`/admin/${question.id}/choices/new`} title="New Choice" />
+                    <Link className="quizLinkNew" url={`/admin/${question.id}/choices/new`} title="Add New Choice" />
                   </p>
                 </section>
               );

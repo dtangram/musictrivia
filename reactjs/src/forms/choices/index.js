@@ -132,22 +132,23 @@ class ChoicesForm extends React.Component {
 
               <form method="POST" onSubmit={this.save}>
                 <fieldset>
-                  <p>Choice Name</p>
+                  <label htmlFor="value">
+                    Choice Name
 
-                  <input
-                    ref={(input) => { this.inputFocus = input; }}
-                    type="text"
-                    name="value"
-                    value={value}
-                    onChange={this.handleInputChange.bind(this)}
-                  />
+                    <input
+                      ref={(input) => { this.inputFocus = input; }}
+                      type="text"
+                      name="value"
+                      value={value}
+                      onChange={this.handleInputChange.bind(this)}
+                    />
+                  </label>
                 </fieldset>
 
                 <fieldset>
-                  <p>Choice Type</p>
+                  <h3>Choice Type</h3>
 
                   <label className="labelRadio" htmlFor="correct">
-                    Correct
                     <input
                       type="radio"
                       value="correct"
@@ -155,10 +156,11 @@ class ChoicesForm extends React.Component {
                       checked={type === 'correct'}
                       onChange={this.handleChange.bind(this)}
                     />
+
+                    Correct
                   </label>
 
                   <label className="labelRadio" htmlFor="incorrect">
-                    Incorrect
                     <input
                       type="radio"
                       value="incorrect"
@@ -166,6 +168,8 @@ class ChoicesForm extends React.Component {
                       checked={type === 'incorrect'}
                       onChange={this.handleChange.bind(this)}
                     />
+
+                    Incorrect
                   </label>
                 </fieldset>
 

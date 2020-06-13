@@ -43,7 +43,7 @@ class App extends Component {
               <Route path="/admin/quizzes/privateQuiz/:userId" exact component={QuizzesListPrivate} />
               <Route path="/admin/quizzes/publicQuiz/:userId" exact component={QuizzesListPublic} />
             </Switch>
-            <Route path="/" exact component={Footer} />
+            <Footer />
           </div>
         </Router>
       </Provider>

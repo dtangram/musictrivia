@@ -1,0 +1,892 @@
+*{
+  border: 0;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background: #CCC;
+	color: $colorWhite;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+	position: relative;
+}
+
+
+
+/* TYPOGRAPHY ================================== */
+h1, h2{
+  font-weight: $fontWeightBold;
+	text-transform: capitalize;
+}
+
+h1{
+  color: $colorWhite;
+  font-weight: bold;
+  line-height: 70px;
+}
+
+h2{
+  color: $colorCharcoal;
+	font-size: 2em;
+  line-height: 40px;
+  margin-bottom: 30px;
+  text-align: center;
+
+  a span{
+    color: $colorCharcoal;
+    font-size: 2rem;
+    font-weight: normal;
+  }
+}
+
+.wrapper h2{
+  color: $colorWhite;
+}
+
+.currentLink a{
+  color: $colorGreen;
+  font-weight: $fontWeightBold;
+  text-decoration: underline;
+}
+
+a{
+  color: $colorWhite;
+
+  &:hover{
+    color: $colorGreen;
+    text-decoration: underline;
+  }
+}
+
+p{
+	color: $colorWhite;
+  font-size: 2rem;
+}
+
+.graphic{
+  background: $colorGreen;
+  @extend %center-element;
+  height: 10px;
+  margin-top: 13px;
+  // margin-bottom: 50px;
+  width: 70px;
+}
+
+.row{
+  flex-wrap: nowrap;
+
+  @include mq(mediumLargeMd){
+    flex-wrap: wrap;
+  }
+}
+
+button{
+  background: $colorGreen;
+  bottom: 30px;
+  @extend %center-element;
+  color: $colorPurple;
+  cursor: pointer;
+  // min-height: 40px;
+  padding: 10px;
+}
+
+.wrapper > button{
+  font-size: 1.5em;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+form{
+  background: $colorPurple;
+  border-radius: 15px;
+  @extend %center-element;
+  display: inline-block;
+  left: 0;
+  padding: 30px 1%;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 120px;
+  width: 350px;
+
+  p{
+    font-size: 1em;
+    margin-bottom: 7px;
+  }
+}
+
+input{
+  border-radius: 8px;
+  height: 35px;
+  margin-bottom: 25px;
+  padding: 10px 1%;
+  width: 100%;
+}
+
+
+
+/* BASE STRUCTURE =============================== */
+#main{
+  display: flex;
+  flex-direction: column;
+  @extend %center-element;
+  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 0;
+  position: relative;
+  width: 100%;
+
+  @include mq(small){
+    padding-bottom: 80px;
+  }
+
+  @include mq(mediumLarge){
+    width: 100%;
+  }
+}
+
+
+
+/* HEADER ================================== */
+header{
+  align-items: center;
+  background: #2B2B2B;
+  display: flex;
+  flex-direction: row;
+  height: 90px;
+  margin-bottom: 40px;
+  padding: 0 9%;
+  position: fixed;
+  justify-content: space-between;
+	width: 100%;
+  z-index: 999;
+
+  @include mq(small){
+    width: 100%;
+  }
+
+  @include mq(medium){
+    background-position: center;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  /*LOGO*/
+  > div:nth-child(1){
+  	display: inline-block;
+
+    @include mq(small){
+      width: 50% !important;
+    }
+
+    @include mq(medium){
+      width: 40%;
+    }
+
+    a{
+      &:hover{
+        text-decoration: none;
+      }
+
+      > div{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        padding: .5rem 1rem;
+      }
+
+      div div{
+        float: left;
+        height: 100%;
+        margin-right: 5%;
+        width: 10%;
+      }
+
+      div div img{
+        width: 100%;
+
+        @include mq(small){
+          margin-right: 2%;
+          width: 45px;
+        }
+
+        @include mq(medium){
+          width: 15px;
+        }
+      }
+
+      div h1{
+        color: $colorGreen;
+        font-size: 1.5em;
+        font-weight: $fontWeight;
+
+        @include mq(mediumLargeMd2){
+          font-size: 1.3em;
+        }
+
+        @include mq(mediumLargeMd){
+          padding-top: 3px;
+        }
+
+        span{
+          font-weight: $fontWeightBold;
+        }
+      }
+    }
+  }
+
+  /*NAVIGATION*/
+  nav{
+    float: right;
+    margin-right: 0;
+
+    &.navbar{
+      // padding-top: 20px;
+
+      @include mq(mediumLarge){
+        padding-top: 3px;
+      }
+    }
+
+    @include mq(small){
+      right: 26px !important;
+    }
+
+    @include mq(medium){
+      position: absolute;
+      margin-right: 0;
+      top: 19px;
+      z-index: 99;
+      width: auto;
+    }
+
+    img{
+      cursor: pointer;
+      display: none;
+      width: 30px;
+    }
+
+    img:nth-child(1){
+      @include mq(medium){
+        display: block;
+        float: right;
+      }
+    }
+
+    img:nth-child(2){
+      @include mq(medium){
+        float: right;
+      }
+    }
+
+    div.container{
+      ul{
+        // visibility: visible;
+
+        @include mq(medium){
+          background: $colorCharcoal;
+          margin-top: 38px;
+          // visibility: hidden;
+        };
+
+        @include mq(medium){
+          display: flex;
+          flex-direction: column;
+        }
+
+        li{
+          padding: 0;
+        	text-align: center;
+          width: 100px;
+
+          @include mq(medium){
+            font-size: .9em;
+            margin-bottom: 20px;
+            text-align: left;
+            width: 65px;
+          }
+
+          a{
+            font-size: .9em;
+            text-transform: uppercase;
+            text-decoration: none;
+
+            &:last-child{
+              margin-left: 7%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bckColor{
+    background: #2B2B2B;
+    height: 100px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+  }
+}
+
+
+
+section{
+  height: 950px;
+  position: relative;
+  width: 100%;
+}
+
+
+
+section:nth-child(2){
+  background: rgba(0, 0, 0, .8);
+
+  h1{
+    font-family: $fontFamily;
+    font-size: 5em;
+    margin-bottom: 30px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    text-align: center;
+    top: 40%;
+
+    @include mq(mediumLarge){
+      font-size: 3.5em;
+    }
+
+    @include mq(small){
+      font-size: 2em;
+    }
+  }
+
+  .graphic{
+    @extend %center-element;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 490px;
+
+    @include mq(mediumLarge){
+      top: 515px;
+    }
+  }
+
+  #bck{
+    min-width: 2050px;
+    min-height: 950px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+
+		#bckRotate{
+			margin: 0;
+
+			li{
+        height: 950px;
+        width: 2050px;
+			}
+
+      li:nth-child(1){
+        background: url(../img/imgHero1.jpg) no-repeat 0 0 / cover;
+      }
+
+      li:nth-child(2){
+        background: url(../img/imgHero2.jpg) no-repeat 0 0 / cover;
+      }
+
+      li:nth-child(3){
+        background: url(../img/imgHero3.jpg) no-repeat 0 0 / cover;
+      }
+
+      li:nth-child(4){
+        background: url(../img/imgHero4.jpg) no-repeat 0 0 / cover;
+      }
+
+      li:nth-child(5){
+        background: url(../img/imgHero5.jpg) no-repeat 0 0 / cover;
+      }
+
+      li img{
+        width: 100%;
+      	height: 100%;
+      }
+		}
+	}
+}
+
+
+
+#main > section:nth-child(3){
+  background: $colorWhite;
+  padding-top: 50px;
+}
+
+section:nth-child(3){
+  background: $colorWhite;
+
+  @include mq(mediumLargeMd){
+    height: 1950px;
+  }
+
+  h2{
+    color: $colorCharcoal;
+  }
+
+  > p{
+    color: $colorCharcoal;
+    line-height: 50px;
+    padding: 0 20% 40px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .container{
+    .row{
+      flex-wrap: wrap;
+      margin-right: -15px;
+      margin-left: -15px;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 0;
+
+      .col-lg-4{
+        flex: inherit;
+      }
+
+      article{
+        // &:nth-child(1) p{
+        //   line-height: 20px;
+        // }
+
+        .card{
+          background: $colorPurple;
+          border-bottom-left-radius: 15px;
+          border-bottom-right-radius: 15px;
+          // height: 313px;
+          // height: 100%;
+          margin-bottom: 10px;
+          // margin-right: 5%;
+          padding: 0 .5% 25px;
+          position: relative;
+          // width: 400px;
+
+          @include mq(mediumLargeMd){
+            margin: 0 auto 110px;
+            width: 400px;
+          }
+        }
+
+        form.card-body{
+          // height: 100%;
+        }
+
+        form.card-body{
+          background: transparent;
+          border: 0;
+          border-radius: 0;
+          height: 100%;
+          left: auto;
+          padding: 0;
+          position: relative;
+          right: auto;
+          top: auto;
+          width: 100%;
+        }
+
+        form.card-body h3{
+          margin-bottom: 40px;
+          margin-top: 20px;
+          font-size: 1.3em;
+          font-weight: $fontWeightBold;
+          line-height: 30px;
+
+          @include mq(small){
+            margin-top: 60px;
+            text-align: center;
+          }
+
+          @include mq(mediumLarge){
+            font-size: 1.2em;
+          }
+        }
+
+        form.card-body input{
+          height: auto;
+          margin-bottom: 0;
+          margin-right: 1%;
+          width: 5%;
+        }
+
+        form.card-body label{
+          margin-right: 3%;
+        }
+
+        form.card-body button{
+          background: $colorGreen;
+          bottom: 30px;
+          @extend %center-element;
+          color: $colorWhite;
+          left: 0;
+          padding: 10px 0;
+          position: absolute;
+          right: 0;
+          width: 90%;
+        }
+      }
+
+      article:last-child{
+        margin-right: 0;
+
+        @include mq(mediumLarge){
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}
+
+
+
+.quizWrap{
+  margin-top: 0;
+  min-height: 950px;
+  padding: 120px 0;
+
+  > h1:nth-child(1){
+    font-size: 1.7rem;
+    text-align: center;
+  }
+
+  > h2{
+    margin-top: 0;
+  }
+
+  section{
+    height: auto;
+    min-height: 450px;
+  }
+
+  section:nth-child(2), section:nth-child(3){
+    background: $colorPurple;
+    color: $colorWhite;
+  }
+
+  section:nth-child(2) h1{
+    position: relative;
+    top: auto;
+  }
+
+  .wrapperOne{
+    padding: 0;
+  }
+
+  .wrapper{
+  	font-size: 1.1rem;
+  	font-family: $fontFamily;
+  	margin: 5% auto 0;
+  	background: $colorPurple;
+  	width: 50%;
+  	padding: 10px 3%;
+
+    > h2{
+      margin-top: 5px;
+    }
+
+    > h3{
+      font-size: 2rem;
+      margin-bottom: 20px;
+    	text-align: center;
+      text-transform: capitalize;
+    }
+
+    form{
+      background: $colorGray;
+    	border: 1px solid $colorBlack;
+      display: block;
+    	margin: 0 auto 3%;
+    	padding: 2.2rem 2rem .5rem;
+      position: relative;
+      top: auto;
+    	text-align: left;
+    	width: 80%;
+
+      > fieldset label{
+        color: $colorCharcoal;
+        float: none;
+        font-size: 2rem;
+        margin-bottom: 25px;
+      }
+
+      > fieldset label:nth-child(1), fieldset label:nth-child(3){
+        margin-bottom: 15px;
+        width: 100%;
+      }
+
+      > fieldset input{
+        background: rgba(236, 236, 236, .5);
+        font-size: 1.5rem;
+        padding: .4rem;
+        width: 100%;
+        margin-bottom: .5% 0 2%;
+        color: $colorDarkGray;
+        border-radius: 8px;
+        border: 1px solid $colorBlack;
+        -webkit-transition: all 0.30s ease-in-out;
+        -moz-transition: all 0.30s ease-in-out;
+        -ms-transition: all 0.30s ease-in-out;
+        -o-transition: all 0.30s ease-in-out;
+        outline: none;
+      }
+
+      > fieldset input[type='radio']{
+        height: auto;
+        margin-right: 15px;
+        width: auto;
+      }
+
+      fieldset label.labelRadio{
+        font-size: 1.5rem;
+        margin-right: 15px;
+        width: auto;
+      }
+
+      input.submit{
+        font-size: 1.5rem;
+      	padding: 5px 4%;
+      	border-radius: 4px;
+      	background: $colorDarkGray;
+      	color: $colorWhite;
+      	width: auto;
+      	border: 1px solid $colorGray;
+      	cursor: pointer;
+      	display: inline-block;
+        text-align: center;
+      }
+
+      .flash{
+        color: $colorPurple;
+        font-size: 1.3rem;
+        font-weight: $fontWeightBold;
+        margin-left: 2%;
+      }
+
+      div:nth-child(5){
+      	text-align: center;
+      }
+    }
+
+    p{
+      text-align: center;
+
+      a{
+        margin-right: 50px;
+      }
+    }
+  }
+}
+
+
+#quizCreate, #quizDetail, #questionsCreate, #quizSignup, #choicesCreate{
+  min-height: 610px;
+}
+
+#quizList{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0 5%;
+
+  section h2{
+    color: $colorWhite;
+  }
+
+  section:nth-child(3){
+    height: auto;
+  }
+
+  .wrapper{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    margin: 0 0 25px;
+    min-height: auto;
+    padding: 10px 1%;
+    width: auto;
+
+    p{
+      line-height: inherit;
+      padding: 0;
+    }
+
+    // button{
+    //   color: $colorPurple;
+    //   padding: 10px;
+    // }
+  }
+}
+
+#quizCreate{
+  fieldset{
+    > label{
+      margin-bottom: 30px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+#choicesCreate .wrapper{
+  display: flex;
+  flex-direction: column;
+
+  h3{
+    color: $colorCharcoal;
+  }
+}
+
+.quizWrap #quizDetail{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.quizWrap #quizDetail > p{
+  margin: 10px 0 30px;
+}
+
+.quizWrap #quizDetail > p a span{
+  color: $colorCharcoal;
+  font-size: 2rem;
+}
+
+.quizWrap #quizDetail .wrapper {
+  margin-top: 0;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset {
+  text-align: center;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset > h3, .quizWrap #quizDetail .wrapper form fieldset p {
+  color: $colorCharcoal;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset a, .quizWrap #quizDetail .wrapper form fieldset button, .quizWrap #quizDetail .wrapper form fieldset ul li {
+  color: $colorCharcoal;
+  font-size: 1.5rem;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset > h3 {
+  font-size: 2.1rem;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset a {
+  margin-right: 3%;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset p {
+  font-size: 1.7rem;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset button {
+  padding: 3px 3%;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset > button {
+  margin-bottom: 40px;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset ul li{
+  text-align: center;
+}
+
+.quizWrap #quizDetail .wrapper form fieldset ul li p{
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+
+
+
+
+/* FOOTER =============================== */
+footer{
+	padding: 30px 2%;
+	background: $colorCharcoal;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+
+  > div{
+    display: inline-block;
+    width: 500px;
+
+    @include mq(small){
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    p{
+      flex: 1;
+      float: left;
+      font-size: .8em;
+      margin-right: 5%;
+      padding-top: 12px;
+
+      @include mq(small){
+        float: none;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+    }
+
+    div{
+      img{
+        cursor: pointer;
+        float: left;
+        margin-right: 2%;
+
+        &:nth-child(4){
+          margin-right: 0;
+        }
+      }
+    }
+  }
+
+  ul{
+    display: flex;
+    flex-direction: row;
+    float: right;
+    width: 220px;
+
+    li, p{
+      margin-right: 3%;
+    }
+
+    li{
+      cursor: pointer;
+      font-size: .8em;
+
+      &:hover{
+        color: $colorGreen;
+      }
+    }
+  }
+}

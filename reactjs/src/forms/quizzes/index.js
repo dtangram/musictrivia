@@ -150,8 +150,6 @@ class QuizzesForm extends React.Component {
 
                 <fieldset>
                   <label className="labelRadio" htmlFor="private">
-                    Private Quiz
-
                     <input
                       type="radio"
                       value="private"
@@ -159,11 +157,11 @@ class QuizzesForm extends React.Component {
                       checked={type === 'private'}
                       onChange={this.handleChange.bind(this)}
                     />
+
+                    Private Quiz
                   </label>
 
                   <label className="labelRadio" htmlFor="public">
-                    Public Quiz
-
                     <input
                       type="radio"
                       value="public"
@@ -171,6 +169,8 @@ class QuizzesForm extends React.Component {
                       checked={type === 'public'}
                       onChange={this.handleChange.bind(this)}
                     />
+
+                    Public Quiz
                   </label>
                 </fieldset>
 

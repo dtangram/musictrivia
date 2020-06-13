@@ -24,6 +24,7 @@ class Quiz extends React.Component {
         <div className="quizWrap">
           <div id="quizQuest">
             <h2>{quiz.name}</h2>
+            <div className="graphic" alt="Small orange, rectangle graphic." />
 
             {questionsList.map((questionId) => {
               const question = questionsData[questionId];
