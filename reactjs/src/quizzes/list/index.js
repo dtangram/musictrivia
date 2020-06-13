@@ -26,10 +26,12 @@ class QuizzesListPrivate extends React.Component {
 
     return (
       <React.Fragment>
-        <h2>
-          Private
-          <div className="graphic" alt="Small orange, rectangle graphic." />
-        </h2>
+        <section id="privQuiz">
+          <h2>
+            Private
+            <div className="graphic" alt="Small orange, rectangle graphic." />
+          </h2>
+        </section>
 
         {userId && (
           <div className="quizWrap">
