@@ -26,30 +26,26 @@ class QuizzesListPrivate extends React.Component {
 
     return (
       <React.Fragment>
-        <section id="privQuiz">
-          <h2>
-            Private
-            <div className="graphic" alt="Small orange, rectangle graphic." />
-          </h2>
-        </section>
+        <div className="quizWrap">
+          <div id="quizList">
+            <h2>
+              Private
+              <div className="graphic" alt="Small orange, rectangle graphic." />
+            </h2>
 
-        {userId && (
-          <div className="quizWrap">
-            <div id="quizList">
-              {userQuizzes.map(quiz => (
-                <section className="wrapper wrapperOne" key={quiz.id}>
-                  <h2>{quiz.name}</h2>
+            {userId && userQuizzes.map(quiz => (
+              <section className="wrapper wrapperOne" key={quiz.id}>
+                <h2>{quiz.name}</h2>
 
-                  <p>
-                    <Link url={`/quiz/${quiz.id}`} title="Play" />
-                    <Link url={`/admin/quizzes/detail/${quiz.id}`} title="Edit" />
-                    <button type="submit" onClick={() => this.delete(quiz.id)}>Delete</button>
-                  </p>
-                </section>
-              ))}
-            </div>
+                <p>
+                  <Link url={`/quiz/${quiz.id}`} title="Play" />
+                  <Link url={`/admin/quizzes/detail/${quiz.id}`} title="Edit" />
+                  <button type="submit" onClick={() => this.delete(quiz.id)}>Delete</button>
+                </p>
+              </section>
+            ))}
           </div>
-        )}
+        </div>
       </React.Fragment>
     );
   }
