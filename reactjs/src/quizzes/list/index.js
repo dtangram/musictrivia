@@ -27,12 +27,12 @@ class QuizzesListPrivate extends React.Component {
     return (
       <React.Fragment>
         <div className="quizWrap">
-          <div id="quizList">
-            <h2>
-              Private
-              <div className="graphic" alt="Small orange, rectangle graphic." />
-            </h2>
+          <h2>
+            Private
+            <div className="graphic" alt="Small orange, rectangle graphic." />
+          </h2>
 
+          <div id="quizList">
             {userId && userQuizzes.map(quiz => (
               <section className="wrapper wrapperOne" key={quiz.id}>
                 <h2>{quiz.name}</h2>
