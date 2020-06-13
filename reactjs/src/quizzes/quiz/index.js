@@ -22,8 +22,10 @@ class Quiz extends React.Component {
     return (
       <React.Fragment>
         <div className="quizWrap">
-          <h2>{quiz.name}</h2>
-          <div className="graphic" alt="Small orange, rectangle graphic." />
+          <h2>
+            {quiz.name}
+            <div className="graphic" alt="Small orange, rectangle graphic." />
+          </h2>
 
           <div id="quizQuest">
             {questionsList.map((questionId) => {
