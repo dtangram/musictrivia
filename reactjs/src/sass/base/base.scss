@@ -762,6 +762,10 @@ section:nth-child(3){
 
 #privQuiz{
   margin-top: 120px;
+
+  .quizWrap > h2{
+    margin-bottom: 70px;
+  }
 }
 
 .quizWrap #quizDetail{

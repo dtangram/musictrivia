@@ -28,7 +28,7 @@ class QuizzesListPrivate extends React.Component {
       <React.Fragment>
         <div className="quizWrap">
           <h2>
-            Private
+            Private Quizzes
             <div className="graphic" alt="Small orange, rectangle graphic." />
           </h2>
 

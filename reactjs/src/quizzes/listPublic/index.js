@@ -26,10 +26,15 @@ class QuizzesListPublic extends React.Component {
 
     return (
       <React.Fragment>
-        {userId && (
+        {(
           <div className="quizWrap">
+            <h2>
+              Public Quizzes
+              <div className="graphic" alt="Small orange, rectangle graphic." />
+            </h2>
+
             <div id="quizList">
-              {publicQuizzes.map(quiz => (
+              {userId && publicQuizzes.map(quiz => (
                 <section className="wrapper wrapperOne" key={quiz.id}>
                   <h2>{quiz.name}</h2>
 
