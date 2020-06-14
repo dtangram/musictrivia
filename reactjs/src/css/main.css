@@ -519,6 +519,9 @@ section:nth-child(3) {
     color: #2B2B2B; }
 
 .quizWrap #quizDetail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 30px;
   text-align: center; }
 

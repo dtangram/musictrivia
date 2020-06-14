@@ -761,6 +761,9 @@ section:nth-child(3){
 }
 
 .quizWrap #quizDetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-bottom: 30px;
   text-align: center;
 }
