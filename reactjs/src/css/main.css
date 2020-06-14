@@ -519,9 +519,6 @@ section:nth-child(3) {
     color: #2B2B2B; }
 
 .quizWrap #quizDetail {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin-bottom: 30px;
   text-align: center; }
 
@@ -533,7 +530,7 @@ section:nth-child(3) {
   font-size: 2rem; }
 
 .quizWrap #quizDetail .wrapper {
-  margin-top: 0; }
+  margin: 0 0 20px; }
 
 .quizWrap #quizDetail .wrapper form fieldset {
   text-align: center; }
