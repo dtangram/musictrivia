@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 // import { Link as RRLink } from 'react-router-dom';
@@ -26,6 +27,9 @@ class QuizzesDetail extends React.Component {
     } = this.props;
 
     if (!quiz) return null;
+
+    const userId = localStorage.getItem('id');
+    if (!userId) return <Redirect to="/" />;
 
     return (
       <React.Fragment>

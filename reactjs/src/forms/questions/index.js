@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 import '../../css/main.css';
@@ -98,6 +99,9 @@ class QuestionsForm extends React.Component {
       // get the name from the state and if it doesn't exist use the prop
       title = defaultTitle,
     } = this.state;
+
+    const userId = localStorage.getItem('id');
+    if (!userId) return <Redirect to="/" />;
 
     return (
       <React.Fragment>
