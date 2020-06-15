@@ -62,7 +62,7 @@ export const createQuestion = question => async (dispatch) => {
   const newQuestion = await API.post('/questions', question);
   // add the new question
   dispatch({ type: SET_QUESTION, question: { ...question, ...newQuestion } });
-  dispatch({ type: ADD_QUIZ_QUESTION, id: newQuestion.id, question });
+  dispatch({ type: ADD_QUIZ_QUESTION, id: newQuestion.id, quizId: question.quizId });
 };
 
 export const updateQuestion = question => async (dispatch) => {

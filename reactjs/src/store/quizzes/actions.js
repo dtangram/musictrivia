@@ -1,4 +1,3 @@
-// import { v4 as uuid } from 'uuid';
 import {
   SET_QUIZ,
   REMOVE_QUIZ,
@@ -35,15 +34,14 @@ export const deleteQuiz = id => async (dispatch, getState) => {
 };
 
 export const createQuiz = quiz => async (dispatch) => {
-  // const id = uuid();
   // make the create api call to make a new quiz
   const createdQuiz = await API.post('/quizzes', quiz);
   // add the new quiz
   dispatch({ type: SET_QUIZ, quiz: { ...quiz, ...createdQuiz } });
   // append the id to the user's list
-  dispatch({ type: ADD_USER_QUIZ, id: createdQuiz.id, quiz });
+  dispatch({ type: ADD_USER_QUIZ, id: createdQuiz.id, userId: quiz.userId });
   // if it's public add it to the public quizzes
-  if (quiz.type === 'public') dispatch({ type: ADD_PUBLIC_QUIZ, id: createdQuiz.id, quiz });
+  if (quiz.type === 'public') dispatch({ type: ADD_PUBLIC_QUIZ, id: createdQuiz.id, userId: quiz.userId });
 
   return quiz;
 };

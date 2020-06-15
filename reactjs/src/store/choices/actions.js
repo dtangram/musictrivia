@@ -34,7 +34,7 @@ export const createChoice = choice => async (dispatch) => {
   const newchoice = await API.post('/choices', choice);
   // add the new choice
   dispatch({ type: SET_CHOICE, choice: { ...choice, ...newchoice } });
-  dispatch({ type: ADD_CHOICE, id: newchoice.id, choice });
+  dispatch({ type: ADD_CHOICE, id: newchoice.id, questionId: choice.questionId });
 };
 
 // export const saveChoice = choice => async (dispatch) => {
