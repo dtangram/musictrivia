@@ -69,7 +69,7 @@ export const updateQuestion = question => async (dispatch) => {
   if (question.id) {
     // make the update api call to save the changes
     const updatedQuestion = await API.put(`/questions/${question.id}`, {
-      quizId: question.quizId,
+      title: question.title,
     });
     // update the state
     dispatch({ type: SET_QUESTION, question: { ...question, ...updatedQuestion } });

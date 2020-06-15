@@ -20,7 +20,7 @@ router.get('/:id', questionCtrl.getOneById);
 router.put('/:id', protectedRoute, questionCtrl.updateQuestion);
 
 // DELETE /questions/:id
-router.delete('/:id', protectedRoute, questionCtrl.removeQuestion);
+router.delete('/:id', questionCtrl.removeQuestion);
 
 // export the route from this file
 module.exports = router;
