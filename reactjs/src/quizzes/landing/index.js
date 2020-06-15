@@ -47,7 +47,7 @@ class Landing extends React.Component {
                       <h3>{quiz.name}</h3>
 
                       <p>
-                        <Link to={`/:userId/quiz/${quiz.id}`}>Play</Link>
+                        <Link to={`/${userId}/quiz/${quiz.id}`}>Play</Link>
                       </p>
                     </form>
                   </div>
