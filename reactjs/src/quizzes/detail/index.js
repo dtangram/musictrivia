@@ -14,8 +14,7 @@ class QuizzesDetail extends React.Component {
     fetchQuestion(id);
   }
 
-  delete = async (id, event) => {
-    event.preventDefault();
+  delete = async (id) => {
     const { deleteQuestion, deleteChoice } = this.props;
     await deleteQuestion(id); deleteChoice(id);
     // window.location.reload(false);
@@ -53,7 +52,7 @@ class QuizzesDetail extends React.Component {
                       <h3>{question.title}</h3>
 
                       <Link url={`/admin/${quiz.id}/questions/edit/${question.id}`} title="Edit" />
-                      <button type="button" onClick={() => this.delete(question.id)}>Delete</button>
+                      <button type="submit" onClick={() => this.delete(question.id)}>Delete</button>
 
                       <ul>
                         {question.choices.map((choiceId) => {
@@ -64,7 +63,7 @@ class QuizzesDetail extends React.Component {
 
                               <p>
                                 <Link url={`/admin/${question.id}/choices/edit/${choice.id}`} title="Edit" />
-                                <button type="button" onClick={() => this.delete(choice.id)}>Delete</button>
+                                <button type="submit" onClick={() => this.delete(choice.id)}>Delete</button>
                               </p>
                             </li>
                           );
