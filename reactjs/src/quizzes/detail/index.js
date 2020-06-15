@@ -53,7 +53,7 @@ class QuizzesDetail extends React.Component {
                       <h3>{question.title}</h3>
 
                       <Link url={`/admin/${quiz.id}/questions/edit/${question.id}`} title="Edit" />
-                      <button type="submit" onClick={() => this.delete(question.id)}>Delete</button>
+                      <button type="button" onClick={() => this.delete(question.id)}>Delete</button>
 
                       <ul>
                         {question.choices.map((choiceId) => {
