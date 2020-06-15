@@ -64,7 +64,7 @@ class QuizzesDetail extends React.Component {
 
                               <p>
                                 <Link url={`/admin/${question.id}/choices/edit/${choice.id}`} title="Edit" />
-                                <button type="submit" onClick={() => this.delete(choice.id)}>Delete</button>
+                                <button type="button" onClick={() => this.delete(choice.id)}>Delete</button>
                               </p>
                             </li>
                           );
