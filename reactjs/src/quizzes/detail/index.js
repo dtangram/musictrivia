@@ -14,7 +14,8 @@ class QuizzesDetail extends React.Component {
     fetchQuestion(id);
   }
 
-  delete = async (id) => {
+  delete = async (id, event) => {
+    event.preventDefault();
     const { deleteQuestion, deleteChoice } = this.props;
     await deleteQuestion(id); deleteChoice(id);
     // window.location.reload(false);
