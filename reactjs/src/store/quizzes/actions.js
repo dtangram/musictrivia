@@ -21,7 +21,7 @@ export const fetchQuiz = id => async (dispatch, getState) => {
   // if the quiz already exists, don't do anything
   if (existingQuiz) return;
   // get the details of the quiz
-  const quiz = await API.get(`/quizzes/${userId}`);
+  const quiz = await API.get(`/quizzes/${id}`);
   // update the state with the quiz
   dispatch({ type: SET_QUIZ, quiz });
 };
