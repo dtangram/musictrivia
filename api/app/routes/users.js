@@ -5,7 +5,7 @@ const router = require('express').Router();
 const userCtrl = require('../controllers/users');
 
 // import the protect middleware
-const protectedRoute = require('../utils/protectedRoute');
+// const protectedRoute = require('../utils/protectedRoute');
 
 // GET /users route using controller middleware
 // router.get('/', protectedRoute, userCtrl.getUsers);

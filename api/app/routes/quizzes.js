@@ -5,7 +5,7 @@ const router = require('express').Router();
 const quizCtrl = require('../controllers/quizzes');
 
 // import the protect middleware
-const protectedRoute = require('../utils/protectedRoute');
+// const protectedRoute = require('../utils/protectedRoute');
 
 // GET /quizzes route using controller middleware
 // router.get('/quizzes', quizCtrl.getUserQuizzes);
@@ -23,10 +23,10 @@ router.post('/', quizCtrl.createQuiz);
 router.get('/:id', quizCtrl.getOneById);
 
 // PUT /quizzes/:id
-router.put('/:id', protectedRoute, quizCtrl.updateQuiz);
+router.put('/:id', quizCtrl.updateQuiz);
 
 // DELETE /quizzes/:id
-router.delete('/:id', protectedRoute, quizCtrl.removeQuiz);
+router.delete('/:id', quizCtrl.removeQuiz);
 
 // export the route from this file
 module.exports = router;

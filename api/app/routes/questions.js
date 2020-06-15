@@ -5,7 +5,7 @@ const router = require('express').Router();
 const questionCtrl = require('../controllers/questions');
 
 // import the protect middleware
-const protectedRoute = require('../utils/protectedRoute');
+// const protectedRoute = require('../utils/protectedRoute');
 
 // GET /questions?quizId=___
 router.get('/', questionCtrl.getQuizQuestions);
@@ -17,7 +17,7 @@ router.post('/', questionCtrl.createQuestion);
 router.get('/:id', questionCtrl.getOneById);
 
 // PUT /questions/:id
-router.put('/:id', protectedRoute, questionCtrl.updateQuestion);
+router.put('/:id', questionCtrl.updateQuestion);
 
 // DELETE /questions/:id
 router.delete('/:id', questionCtrl.removeQuestion);
