@@ -15,7 +15,7 @@ class Login extends React.Component {
 
   componentDidMount() {
     const {
-      loginUser, redirectToGithub, verifyGitHubCode, match: { params: { id, code } },
+      loginUser, verifyGitHubCode, match: { params: { id, code } },
     } = this.props;
     if (id) loginUser(id);
 
@@ -23,8 +23,6 @@ class Login extends React.Component {
     if (code) { verifyGitHubCode(code); }
 
     this.loadData();
-
-    redirectToGithub();
     // this.inputFocus.focus();
 
     // const { location, verifyGitHubCode } = this.props;
@@ -66,12 +64,11 @@ class Login extends React.Component {
         params: { id },
       },
       loginUser,
-      redirectToGithub,
       verifyGitHubCode,
     } = this.props;
     // if no id don't load the user
     if (!id) return;
-    await loginUser(id); redirectToGithub(); verifyGitHubCode();
+    await loginUser(id); verifyGitHubCode();
     // update the state with the data from the updated user
     const { auth } = this.props;
     this.setState({ ...auth });
@@ -118,7 +115,6 @@ class Login extends React.Component {
       },
       // user,
       loggedIn,
-      redirectToGithub,
     } = this.props;
 
     const {
@@ -172,7 +168,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <RRLink url={redirectToGithub}>Login with Github</RRLink>
+                <RRLink url="https://github.com/login/oauth/authorize?clientId=116dde797c68291268c9&scope='identity.basic,identity.email'&redirectURL=https://musictriviaquiz.herokuapp.com/login">Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
@@ -206,7 +202,6 @@ Login.propTypes = {
   match: RRPropTypes.match.isRequired,
   loggedIn: PropTypes.bool,
   verifyGitHubCode: PropTypes.func.isRequired,
-  redirectToGithub: PropTypes.func.isRequired,
 };
 
 Login.defaultProps = {
