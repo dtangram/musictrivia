@@ -5,6 +5,9 @@ const API = axios.create({
   // baseURL: 'https://musictriviaquiz.herokuapp.com/',
   // For Heroku
   baseURL: process.env.DATABASE_URL || 'https://musictriviaquiz.herokuapp.com/',
+  client_id: process.env.CLIENT_ID,
+  redirect_uri: process.env.CALLBACK_URL,
+  scope: 'identity.basic,identity.email',
 });
 
 API.interceptors.response.use(
