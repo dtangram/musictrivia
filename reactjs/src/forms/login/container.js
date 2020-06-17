@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 // pull actions out that we want to use in this component
-import { redirectToGithub, verifyGitHubCode, loginUser } from '../../store/auth/actions';
+import { verifyGitHubCode, loginUser } from '../../store/auth/actions';
 
 function mapStateToProps(state) {
   // get any information out of the state that we need for this component.
@@ -11,6 +11,6 @@ function mapStateToProps(state) {
 }
 
 // map action functions to props
-const mapDispatchToProps = { redirectToGithub, verifyGitHubCode, loginUser };
+const mapDispatchToProps = { verifyGitHubCode, loginUser };
 // export the redux connected version of the container.
 export default connect(mapStateToProps, mapDispatchToProps);
