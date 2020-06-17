@@ -6,13 +6,13 @@ import {
 export const redirectToGithub = () => async (dispatch) => {
   const { scope } = 'identity.basic,identity.email';
   // the base url
-  const { githubURL } = await API.post(`https://github.com/login/oauth/authorize?${process.env.CLIENT_ID}&${process.env.CALLBACK_URL}&${scope}`);
+  const { githubURL } = await API.post(`https://github.com/login/oauth/authorize?${process.env.CLIENT_ID}&${process.env.API_URL}&${scope}`);
 
   dispatch({ type: SET_LOGGED_IN, githubURL });
 };
 
 export const verifyGitHubCode = code => async (dispatch) => {
-  const { loggedIn } = await API.post('/auth/github', { code, url: process.env.CALLBACK_URL })
+  const { loggedIn } = await API.post('/auth/github', { code, url: process.env.API_URL })
     .then((res) => {
       // console.log('username: ', username, 'password: ', password);
       // console.log('res: ', res);
