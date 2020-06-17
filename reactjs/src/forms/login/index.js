@@ -116,6 +116,7 @@ class Login extends React.Component {
       },
       // user,
       loggedIn,
+      redirectToGithub,
     } = this.props;
 
     const {
@@ -169,7 +170,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <RRLink url={this.redirectToGithub()}>Login with Github</RRLink>
+                <RRLink url={redirectToGithub()}>Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
