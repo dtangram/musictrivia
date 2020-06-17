@@ -98,11 +98,11 @@ class Login extends React.Component {
   };
 
   redirectToGitHub = async () => {
-    let GITHUB_URL = 'https://github.com/oauth/authorize?';
-    GITHUB_URL += 'client_id=116dde797c68291268c9';
-    GITHUB_URL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
+    const GITHUB_URL = 'https://github.com/oauth/authorize?';
+    const GITHUB_CLIENT = 'client_id=116dde797c68291268c9';
+    const GITHUB_REDIRECT = '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
     // GITHUB_URL += '&scope=identity.basic,identity.email';
-    window.location.href = await GITHUB_URL;
+    window.location.href = await GITHUB_URL + GITHUB_CLIENT + GITHUB_REDIRECT;
   }
 
   render() {
