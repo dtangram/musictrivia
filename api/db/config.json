@@ -10,11 +10,9 @@
     "use_env_variable": "DATABASE_URL"
   },
   "staging": {
-    "use_env_variable": "DATABASE_URL"
-  },
-  "env": {
-    "CLIENT_ID": "116dde797c68291268c9",
-    "CLIENT_SECRET": "c5e3e1a4d8fd92d60f87485473e0f35784efcc83",
-    "CALLBACK_URL": "https://musictriviaquiz.herokuapp.com/login"
+    "use_env_variable": "DATABASE_URL",
+    "use_env_variable": "CLIENT_ID",
+    "use_env_variable": "CLIENT_SECRET",
+    "use_env_variable": "CALLBACK_URL"
   }
 }
