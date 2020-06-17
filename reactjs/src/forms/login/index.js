@@ -64,12 +64,11 @@ class Login extends React.Component {
         params: { id },
       },
       loginUser,
-      redirectToGithub,
       verifyGitHubCode,
     } = this.props;
     // if no id don't load the user
     if (!id) return;
-    await loginUser(id); redirectToGithub(); verifyGitHubCode();
+    await loginUser(id); verifyGitHubCode();
     // update the state with the data from the updated user
     const { auth } = this.props;
     this.setState({ ...auth });
@@ -203,7 +202,6 @@ Login.propTypes = {
   match: RRPropTypes.match.isRequired,
   loggedIn: PropTypes.bool,
   verifyGitHubCode: PropTypes.func.isRequired,
-  redirectToGithub: PropTypes.func.isRequired,
 };
 
 Login.defaultProps = {
