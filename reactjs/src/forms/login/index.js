@@ -14,15 +14,16 @@ class Login extends React.Component {
   };
 
   componentDidMount() {
-    const { loginUser, verifyGitHubCode, match: { params: { id, code } } } = this.props;
+    const {
+      loginUser, redirectToGithub, verifyGitHubCode, match: { params: { id, code } },
+    } = this.props;
     if (id) loginUser(id);
 
     // if there is code verify it
-    if (code) { verifyGitHubCode(code); }
+    if (code) { redirectToGithub(); verifyGitHubCode(code); }
 
     this.loadData();
 
-    this.redirectToGitHub();
     // this.inputFocus.focus();
 
     // const { location, verifyGitHubCode } = this.props;
@@ -48,14 +49,6 @@ class Login extends React.Component {
     this.setState({
       [event.target.name]: event.target.value,
     });
-  }
-
-  redirectToGitHub = () => {
-    let GITHUB_URL = 'https://github.com/oauth/authorize?';
-    GITHUB_URL += `client_id=${process.env.CLIENT_ID}`;
-    GITHUB_URL += `&redirect_uri=${process.env.CALLBACK_URL}`;
-    GITHUB_URL += '&scope=identity.basic,identity.email';
-    window.location = GITHUB_URL;
   }
 
   loadData = async () => {
@@ -167,7 +160,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <RRLink url={this.redirectToGitHub}>Login with Github</RRLink>
+                <RRLink url={this.redirectToGithub}>Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
@@ -201,6 +194,7 @@ Login.propTypes = {
   match: RRPropTypes.match.isRequired,
   loggedIn: PropTypes.bool,
   verifyGitHubCode: PropTypes.func.isRequired,
+  redirectToGithub: PropTypes.func.isRequired,
 };
 
 Login.defaultProps = {
