@@ -4,8 +4,9 @@ import {
 } from '../actionTypes';
 
 export const redirectToGithub = () => async (dispatch) => {
+  const { scope } = 'identity.basic,identity.email';
   // the base url
-  const { githubURL } = await API.post('https://github.com/login/oauth/authorize?', { client_id: process.env.CLIENT_ID, redirect_uri: process.env.CALLBACK_URL, scope: 'identity.basic,identity.email' });
+  const { githubURL } = await API.post(`https://github.com/login/oauth/authorize?${process.env.CLIENT_ID}&${process.env.CALLBACK_URL}&${scope}`);
 
   dispatch({ type: SET_LOGGED_IN, githubURL });
 };
