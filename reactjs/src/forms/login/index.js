@@ -168,7 +168,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <RRLink to="https://github.com/login/oauth/authorize?clientId=116dde797c68291268c9&redirectURL=https://musictriviaquiz.herokuapp.com">Login with Github</RRLink>
+                <RRLink url="https://github.com/login/oauth/authorize?clientId=116dde797c68291268c9&redirectURL=https://musictriviaquiz.herokuapp.com">Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
