@@ -3,8 +3,15 @@ import {
   SET_LOGGED_IN,
 } from '../actionTypes';
 
+export const redirectToGithub = () => async (dispatch) => {
+  // the base url
+  const { githubURL } = await API.post('https://github.com/login/oauth/authorize?', { client_id: process.env.CLIENT_ID, redirect_uri: process.env.CALLBACK_URL, scope: 'identity.basic,identity.email' });
+
+  dispatch({ type: SET_LOGGED_IN, githubURL });
+};
+
 export const verifyGitHubCode = code => async (dispatch) => {
-  const { token, loggedIn } = await API.post('/auth/github', { code, url: process.env.REACT_APP_CALLBACK_URL });
+  const { token, loggedIn } = await API.post('/auth/github', { code, url: process.env.CALLBACK_URL });
   localStorage.setItem('token', token);
   dispatch({ type: SET_LOGGED_IN, loggedIn });
 };
