@@ -66,10 +66,12 @@ class Login extends React.Component {
         params: { id },
       },
       loginUser,
+      redirectToGithub,
+      verifyGitHubCode,
     } = this.props;
     // if no id don't load the user
     if (!id) return;
-    await loginUser(id);
+    await loginUser(id); redirectToGithub(); verifyGitHubCode();
     // update the state with the data from the updated user
     const { auth } = this.props;
     this.setState({ ...auth });
@@ -170,7 +172,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <RRLink url="" onClick={redirectToGithub}>Login with Github</RRLink>
+                <RRLink url={redirectToGithub}>Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
