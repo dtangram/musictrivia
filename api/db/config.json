@@ -12,6 +12,6 @@
   "staging": {
     "use_env_variable": "DATABASE_URL",
     "use_env_variable": "CLIENT_ID",
-    "use_env_variable": "CLIENT_SECRET",
+    "use_env_variable": "CLIENT_SECRET"
   }
 }
