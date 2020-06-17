@@ -11,8 +11,18 @@ export const redirectToGithub = () => async (dispatch) => {
 };
 
 export const verifyGitHubCode = code => async (dispatch) => {
-  const { token, loggedIn } = await API.post('/auth/github', { code, url: process.env.CALLBACK_URL });
-  localStorage.setItem('token', token);
+  const { loggedIn } = await API.post('/auth/github', { code, url: process.env.CALLBACK_URL })
+    .then((res) => {
+      // console.log('username: ', username, 'password: ', password);
+      // console.log('res: ', res);
+
+      if (res && res.token) {
+        localStorage.setItem('token', res.token);
+      }
+
+      return res;
+    });
+
   dispatch({ type: SET_LOGGED_IN, loggedIn });
 };
 
