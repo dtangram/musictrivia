@@ -14,19 +14,24 @@ class Login extends React.Component {
   };
 
   componentDidMount() {
-    const { loginUser, match: { params: { id } } } = this.props;
+    const { loginUser, verifyGitHubCode, match: { params: { id, code } } } = this.props;
     if (id) loginUser(id);
 
-    this.loadData();
-    // this.inputFocus.focus();
-
-    const { location, verifyGitHubCode } = this.props;
-    // get the query params from the url query string
-    const queryParams = new URLSearchParams(location.search);
-    // get the code if there is one from github
-    const code = queryParams.get('code');
     // if there is code verify it
     if (code) { verifyGitHubCode(code); }
+
+    this.loadData();
+
+    this.redirectToGitHub();
+    // this.inputFocus.focus();
+
+    // const { location, verifyGitHubCode } = this.props;
+    // // get the query params from the url query string
+    // const queryParams = new URLSearchParams(location.search);
+    // // get the code if there is one from github
+    // const code = queryParams.get('code');
+    // // if there is code verify it
+    // if (code) { verifyGitHubCode(code); }
   }
 
   // handleInputChange = (event) => {
@@ -199,7 +204,6 @@ Login.propTypes = {
   match: RRPropTypes.match.isRequired,
   loggedIn: PropTypes.bool,
   verifyGitHubCode: PropTypes.func.isRequired,
-  location: RRPropTypes.location.isRequired,
 };
 
 Login.defaultProps = {
