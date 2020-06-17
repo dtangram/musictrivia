@@ -50,13 +50,13 @@ class Login extends React.Component {
     });
   }
 
-  // redirectToGitHub = () => {
-  //   let GITHUB_URL = 'https://github.com/oauth/authorize?';
-  //   GITHUB_URL += `client_id=${process.env.CLIENT_ID}`;
-  //   GITHUB_URL += `&redirect_uri=${process.env.CALLBACK_URL}`;
-  //   GITHUB_URL += '&scope=identity.basic,identity.email';
-  //   window.location = GITHUB_URL;
-  // }
+  redirectToGitHub = () => {
+    let GITHUB_URL = 'https://github.com/oauth/authorize?';
+    GITHUB_URL += 'client_id=116dde797c68291268c9';
+    GITHUB_URL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
+    // GITHUB_URL += '&scope=identity.basic,identity.email';
+    window.location = GITHUB_URL;
+  }
 
   loadData = async () => {
     const {
@@ -64,11 +64,12 @@ class Login extends React.Component {
         params: { id },
       },
       loginUser,
+      redirectToGithub,
       verifyGitHubCode,
     } = this.props;
     // if no id don't load the user
     if (!id) return;
-    await loginUser(id); verifyGitHubCode();
+    await loginUser(id); redirectToGithub(); verifyGitHubCode();
     // update the state with the data from the updated user
     const { auth } = this.props;
     this.setState({ ...auth });
@@ -168,7 +169,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <RRLink url="https://github.com/login/oauth/authorize?clientId=116dde797c68291268c9&redirectURL=https://musictriviaquiz.herokuapp.com">Login with Github</RRLink>
+                <RRLink url="" onClick={this.redirectToGithub()}>Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
@@ -202,6 +203,7 @@ Login.propTypes = {
   match: RRPropTypes.match.isRequired,
   loggedIn: PropTypes.bool,
   verifyGitHubCode: PropTypes.func.isRequired,
+  redirectToGithub: PropTypes.func.isRequired,
 };
 
 Login.defaultProps = {
