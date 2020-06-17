@@ -97,11 +97,11 @@ class Login extends React.Component {
   };
 
   redirectToGitHub = () => {
-    const gitHubURL = 'https://github.com/oauth/authorize?client_id=116dde797c68291268c9&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
-    // gitHubURL += 'client_id=116dde797c68291268c9';
-    // gitHubURL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
+    let GITHUB_URL = 'https://github.com/oauth/authorize?';
+    GITHUB_URL += 'client_id=116dde797c68291268c9';
+    GITHUB_URL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
     // GITHUB_URL += '&scope=identity.basic,identity.email';
-    window.location = gitHubURL;
+    window.location = GITHUB_URL;
   }
 
   render() {
@@ -168,7 +168,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <RRLink url="" onClick={this.redirectToGithub()}>Login with Github</RRLink>
+                <RRLink url="" onClick={() => this.redirectToGithub()}>Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
