@@ -50,14 +50,6 @@ class Login extends React.Component {
     });
   }
 
-  redirectToGitHub = () => {
-    let GITHUB_URL = 'https://github.com/oauth/authorize?';
-    GITHUB_URL += 'client_id=116dde797c68291268c9';
-    GITHUB_URL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
-    // GITHUB_URL += '&scope=identity.basic,identity.email';
-    window.location = GITHUB_URL;
-  }
-
   loadData = async () => {
     const {
       match: {
@@ -103,6 +95,14 @@ class Login extends React.Component {
       });
     }
   };
+
+  redirectToGitHub = () => {
+    const gitHubURL = 'https://github.com/oauth/authorize?client_id=116dde797c68291268c9&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
+    // gitHubURL += 'client_id=116dde797c68291268c9';
+    // gitHubURL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
+    // GITHUB_URL += '&scope=identity.basic,identity.email';
+    window.location = gitHubURL;
+  }
 
   render() {
     // const { loggedIn } = this.props;
