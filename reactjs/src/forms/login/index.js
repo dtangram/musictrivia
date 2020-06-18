@@ -169,7 +169,10 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <button type="button" onClick={() => this.redirectToGithub()}>Login with Github</button>
+                {
+                  // <button type="button" onClick={() => this.redirectToGithub(
+                // )}>Login with Github</button>
+                }
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
