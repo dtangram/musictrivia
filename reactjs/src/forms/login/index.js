@@ -167,13 +167,15 @@ class Login extends React.Component {
               />
             </form>
 
-            <div>
-              <p>
-                <RRLink url={this.redirectToGithub}>Login with Github</RRLink>
-                <br />
-                <Link url="/signup" title="Need an Account?" />
-              </p>
-            </div>
+            {
+              // <div>
+              //   <p>
+              //     <RRLink url={this.redirectToGithub}>Login with Github</RRLink>
+              //     <br />
+              //     <Link url="/signup" title="Need an Account?" />
+              //   </p>
+              // </div>
+            }
           </section>
         </div>
       </React.Fragment>
