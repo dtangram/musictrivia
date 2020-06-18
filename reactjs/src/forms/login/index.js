@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 // import { Redirect } from 'react-router-dom';
-import { Link, Redirect } from 'react-router-dom';
-// import Link from '../../link';
+import { Link as RRLink, Redirect } from 'react-router-dom';
+import Link from '../../link';
 import '../../css/main.css';
 import LoginContainer from './container';
 
@@ -97,18 +97,24 @@ class Login extends React.Component {
     }
   };
 
-  redirectToGitHub = () => {
-    let GITHUB_URL = 'https://github.com/oauth/authorize?';
-    GITHUB_URL += `client_id=${process.env.REACT_APP_CLIENT_ID}`;
-    GITHUB_URL += `&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`;
-    // GITHUB_URL += '&scope=identity.basic,identity.email';
-    window.location = GITHUB_URL;
-    // let GITHUB_URL = 'https://github.com/oauth/authorize?';
-    // GITHUB_URL += 'client_id=116dde797c68291268c9';
-    // GITHUB_URL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
-    // // GITHUB_URL += '&scope=identity.basic,identity.email';
-    // window.location = GITHUB_URL;
+  push() {
+    const { history } = this.props;
+
+    history.push(`https://github.com/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`);
   }
+
+  // redirectToGitHub = () => {
+  //   let GITHUB_URL = 'https://github.com/oauth/authorize?';
+  //   GITHUB_URL += `client_id=${process.env.REACT_APP_CLIENT_ID}`;
+  //   GITHUB_URL += `&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`;
+  //   // GITHUB_URL += '&scope=identity.basic,identity.email';
+  //   window.location = GITHUB_URL;
+  //   // let GITHUB_URL = 'https://github.com/oauth/authorize?';
+  //   // GITHUB_URL += 'client_id=116dde797c68291268c9';
+  //   // GITHUB_URL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
+  //   // // GITHUB_URL += '&scope=identity.basic,identity.email';
+  //   // window.location = GITHUB_URL;
+  // }
 
   render() {
     // const { loggedIn } = this.props;
@@ -121,6 +127,7 @@ class Login extends React.Component {
       },
       // user,
       loggedIn,
+      history,
     } = this.props;
 
     const {
@@ -175,7 +182,7 @@ class Login extends React.Component {
             {
               <div>
                 <p>
-                  <Link url={`https://github.com/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`}>Login with Github</Link>
+                  <RRLink url={history.push()}>Login with Github</RRLink>
                   <br />
                   <Link url="/signup" title="Need an Account?" />
                 </p>
