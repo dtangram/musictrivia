@@ -10,8 +10,8 @@ class Signup extends React.Component {
     username: undefined,
     email: undefined,
     password: undefined,
-    type: '',
-    // type: 'regular',
+    // type: '',
+    type: 'regular',
   }
 
   componentDidMount() {
@@ -74,7 +74,13 @@ class Signup extends React.Component {
         email,
         password,
         type,
-      }).then(() => history.push('/login'));
+      }).then(() => {
+        if (type === 'github') {
+          window.location = `https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}&scope=identity.basic,identity.email`;
+        } else if (type === 'regular') {
+          history.push('/login');
+        }
+      });
     }
   };
 
@@ -90,8 +96,8 @@ class Signup extends React.Component {
         username: defaultUsername = '',
         email: defaultEmail = '',
         password: defaultPassword = '',
-        type: defaultType = '',
-        // type: defaultType = 'regular',
+        // type: defaultType = '',
+        type: defaultType = 'regular',
       },
     } = this.props;
 
