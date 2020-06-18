@@ -3,12 +3,12 @@ import {
   SET_LOGGED_IN,
 } from '../actionTypes';
 
-export const redirectToGithub = () => async (dispatch) => {
-  // the base url
-  const { githubURL } = await API.post('/auth/githubRedirect');
-
-  dispatch({ type: SET_LOGGED_IN, githubURL });
-};
+// export const redirectToGithub = () => async (dispatch) => {
+//   // the base url
+//   const { githubURL } = await API.post('/auth/githubRedirect');
+//
+//   dispatch({ type: SET_LOGGED_IN, githubURL });
+// };
 
 export const verifyGitHubCode = code => async (dispatch) => {
   const { loggedIn } = await API.post('/auth/github', { code, url: process.env.CALLBACK_URL })

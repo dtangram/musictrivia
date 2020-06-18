@@ -31,27 +31,27 @@ exports.login = async (req, res) => {
   }
 };
 
-exports.redirectToGithub = async (req, res) => {
-  try {
-    // convert the object into a query string (?client_id=&scope=&redirect_uri=)
-    await axios.get(
-      'https://github.com/login/oauth/authorize?',
-      {
-        params: {
-          clientId: process.env.CLIENT_ID,
-          redirectURL: process.env.CALLBACK_URL,
-          // get the basic info about the user and their email
-          // scope: 'identity.basic,identity.email',
-        },
-      },
-    );
-  } catch (e) {
-    // log the error
-    error(e);
-    // send an unauthorized response if something above fails to work.
-    res.status(401).json({ loggedIn: false });
-  }
-};
+// exports.redirectToGithub = async (req, res) => {
+//   try {
+//     // convert the object into a query string (?client_id=&scope=&redirect_uri=)
+//     await axios.get(
+//       'https://github.com/login/oauth/authorize?',
+//       {
+//         params: {
+//           clientId: process.env.CLIENT_ID,
+//           redirectURL: process.env.CALLBACK_URL,
+//           // get the basic info about the user and their email
+//           // scope: 'identity.basic,identity.email',
+//         },
+//       },
+//     );
+//   } catch (e) {
+//     // log the error
+//     error(e);
+//     // send an unauthorized response if something above fails to work.
+//     res.status(401).json({ loggedIn: false });
+//   }
+// };
 
 exports.exchangeCode = async (req, res) => {
   // pull the code out of the body
