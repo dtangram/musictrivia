@@ -4,7 +4,7 @@
     "SECRET": "dgJZbmXDGWPNzz7CK4YZwUx8r0bG6u74EHIL2WKmsxmZ48lfWcna11DQZSANKvqNuDgJsUkY7JwDAY5MJ3G8H3wsgElyh0OFYM6CSH1MDXlOmEq2rdUHOfHJhDcexguppAj62jUQoVLBpxAsTc9WEYSCaeXWJvyJH3nYOYkBpeICGQuxw1sPY34oPUOuY4iBF6F5XEe8bPqVPnkHql5wWJma95MpOh6WW9izfuP0rtG2uLFmpKHT4qo61g",
     "CLIENT_ID": "116dde797c68291268c9",
     "CLIENT_SECRET": "c5e3e1a4d8fd92d60f87485473e0f35784efcc83",
-    "CALLBACK_URL": "https://musictriviaquiz.herokuapp.com/login"
+    "CALLBACK_URL": "https://musictriviaquiz.herokuapp.com"
   }
 
 }
