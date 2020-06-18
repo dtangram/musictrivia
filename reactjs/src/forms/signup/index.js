@@ -10,7 +10,8 @@ class Signup extends React.Component {
     username: undefined,
     email: undefined,
     password: undefined,
-    type: 'regular',
+    type: '',
+    // type: 'regular',
   }
 
   componentDidMount() {
@@ -89,7 +90,8 @@ class Signup extends React.Component {
         username: defaultUsername = '',
         email: defaultEmail = '',
         password: defaultPassword = '',
-        type: defaultType = 'regular',
+        type: defaultType = '',
+        // type: defaultType = 'regular',
       },
     } = this.props;
 
