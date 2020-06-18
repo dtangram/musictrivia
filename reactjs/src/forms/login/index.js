@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 // import { Redirect } from 'react-router-dom';
-import { Link as RRLink, Redirect } from 'react-router-dom';
-import Link from '../../link';
+import { Link, Redirect } from 'react-router-dom';
+// import Link from '../../link';
 import '../../css/main.css';
 import LoginContainer from './container';
 
@@ -175,7 +175,7 @@ class Login extends React.Component {
             {
               <div>
                 <p>
-                  <RRLink to={`https://github.com/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`}>Login with Github</RRLink>
+                  <Link url={`https://github.com/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`}>Login with Github</Link>
                   <br />
                   <Link url="/signup" title="Need an Account?" />
                 </p>
