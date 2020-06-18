@@ -18,6 +18,7 @@ export const verifyGitHubCode = code => async (dispatch) => {
 
       if (res && res.token) {
         localStorage.setItem('token', res.token);
+        localStorage.setItem('id', res.id);
       }
 
       return res;

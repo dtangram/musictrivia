@@ -75,7 +75,7 @@ exports.exchangeCode = async (req, res) => {
       email: data.user.email,
       access_token: data.user.access_token,
       password: data.user.password,
-      type: 'regular',
+      type: 'github',
     }, { returning: true });
 
     const token = jwt.sign({ id: user.id }, process.env.SECRET);
