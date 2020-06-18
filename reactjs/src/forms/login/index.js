@@ -174,7 +174,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                <a href={this.redirectToGithub}>Login with Github</a>
+                <RRLink to={this.redirectToGithub}>Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
