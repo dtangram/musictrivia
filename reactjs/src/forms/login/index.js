@@ -99,8 +99,8 @@ class Login extends React.Component {
 
   redirectToGitHub = () => {
     let GITHUB_URL = 'https://github.com/oauth/authorize?';
-    GITHUB_URL += `client_id=${process.env.CLIENT_ID}`;
-    GITHUB_URL += `&redirect_uri=${process.env.CALLBACK_URL}`;
+    GITHUB_URL += `client_id=${process.env.REACT_APP_CLIENT_ID}`;
+    GITHUB_URL += `&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`;
     // GITHUB_URL += '&scope=identity.basic,identity.email';
     window.location = GITHUB_URL;
     // let GITHUB_URL = 'https://github.com/oauth/authorize?';

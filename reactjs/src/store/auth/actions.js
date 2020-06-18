@@ -11,7 +11,7 @@ import {
 // };
 
 export const verifyGitHubCode = code => async (dispatch) => {
-  const { loggedIn } = await API.post('/auth/github', { code, url: process.env.CALLBACK_URL })
+  const { loggedIn } = await API.post('/auth/github', { code, url: process.env.REACT_APP_CALLBACK_URL })
     .then((res) => {
       // console.log('username: ', username, 'password: ', password);
       // console.log('res: ', res);
