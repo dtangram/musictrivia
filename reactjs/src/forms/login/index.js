@@ -175,7 +175,7 @@ class Login extends React.Component {
             {
               <div>
                 <p>
-                  <RRLink url={`https://github.com/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`}>Login with Github</RRLink>
+                  <RRLink to={`https://github.com/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`}>Login with Github</RRLink>
                   <br />
                   <Link url="/signup" title="Need an Account?" />
                 </p>
