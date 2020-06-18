@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
-import { Redirect } from 'react-router-dom';
-// import { Link as RRLink, Redirect } from 'react-router-dom';
-// import Link from '../../link';
+// import { Redirect } from 'react-router-dom';
+import { Link as RRLink, Redirect } from 'react-router-dom';
+import Link from '../../link';
 import '../../css/main.css';
 import LoginContainer from './container';
 
@@ -23,7 +23,7 @@ class Login extends React.Component {
     if (code) { verifyGitHubCode(code); }
 
     this.loadData();
-    this.redirectToGitHub();
+    // this.redirectToGitHub();
     // this.inputFocus.focus();
 
     // const { location, verifyGitHubCode } = this.props;
@@ -172,15 +172,13 @@ class Login extends React.Component {
               />
             </form>
 
-            {
-              // <div>
-              //   <p>
-              //     <RRLink url={this.redirectToGithub}>Login with Github</RRLink>
-              //     <br />
-              //     <Link url="/signup" title="Need an Account?" />
-              //   </p>
-              // </div>
-            }
+            <div>
+              <p>
+                <RRLink url="" onClick={() => this.redirectToGithub()}>Login with Github</RRLink>
+                <br />
+                <Link url="/signup" title="Need an Account?" />
+              </p>
+            </div>
           </section>
         </div>
       </React.Fragment>
