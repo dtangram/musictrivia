@@ -15,24 +15,24 @@ class Login extends React.Component {
 
   componentDidMount() {
     const {
-      loginUser, location, verifyGitHubCode, match: { params: { id } },
+      loginUser, verifyGitHubCode, match: { params: { id, code } },
     } = this.props;
     if (id) loginUser(id);
 
     // if there is code verify it
-    // if (code) { verifyGitHubCode(code); }
+    if (code) { verifyGitHubCode(code); }
 
     this.loadData();
     // this.redirectToGitHub.bind(this);
     // this.inputFocus.focus();
 
     // const { location, verifyGitHubCode } = this.props;
-    // get the query params from the url query string
-    const queryParams = new URLSearchParams(location.search);
-    // get the code if there is one from github
-    const code = queryParams.get('code');
-    // if there is code verify it
-    if (code) { verifyGitHubCode(code); }
+    // // get the query params from the url query string
+    // const queryParams = new URLSearchParams(location.search);
+    // // get the code if there is one from github
+    // const code = queryParams.get('code');
+    // // if there is code verify it
+    // if (code) { verifyGitHubCode(code); }
   }
 
   // handleInputChange = (event) => {
@@ -101,7 +101,7 @@ class Login extends React.Component {
     let GITHUB_URL = 'https://github.com/oauth/authorize?';
     GITHUB_URL += `client_id=${process.env.REACT_APP_CLIENT_ID}`;
     GITHUB_URL += `&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`;
-    GITHUB_URL += '&scope=identity.basic,identity.email';
+    // GITHUB_URL += '&scope=identity.basic,identity.email';
     window.location = GITHUB_URL;
     // let GITHUB_URL = 'https://github.com/oauth/authorize?';
     // GITHUB_URL += 'client_id=116dde797c68291268c9';
@@ -175,7 +175,7 @@ class Login extends React.Component {
             {
               <div>
                 <p>
-                  <RRLink url={this.redirectToGithub}>Login with Github</RRLink>
+                  <RRLink url={`https://github.com/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_CALLBACK_URL}`}>Login with Github</RRLink>
                   <br />
                   <Link url="/signup" title="Need an Account?" />
                 </p>
@@ -210,7 +210,6 @@ Login.propTypes = {
   match: RRPropTypes.match.isRequired,
   loggedIn: PropTypes.bool,
   verifyGitHubCode: PropTypes.func.isRequired,
-  location: RRPropTypes.location.isRequired,
 };
 
 Login.defaultProps = {
