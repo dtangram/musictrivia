@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 // import { Redirect } from 'react-router-dom';
-import { Link as RRLink, Redirect } from 'react-router-dom';
-import Link from '../../link';
+import { Link, Redirect } from 'react-router-dom';
+// import Link from '../../link';
 import '../../css/main.css';
 import LoginContainer from './container';
 
@@ -23,7 +23,7 @@ class Login extends React.Component {
     if (code) { verifyGitHubCode(code); }
 
     this.loadData();
-    this.redirectToGitHub.bind(this);
+    // this.redirectToGitHub.bind(this);
     // this.inputFocus.focus();
 
     // const { location, verifyGitHubCode } = this.props;
@@ -99,10 +99,15 @@ class Login extends React.Component {
 
   redirectToGitHub = () => {
     let GITHUB_URL = 'https://github.com/oauth/authorize?';
-    GITHUB_URL += 'client_id=116dde797c68291268c9';
-    GITHUB_URL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
+    GITHUB_URL += `client_id=${process.env.CLIENT_ID}`;
+    GITHUB_URL += `&redirect_uri=${process.env.CALLBACK_URL}`;
     // GITHUB_URL += '&scope=identity.basic,identity.email';
     window.location = GITHUB_URL;
+    // let GITHUB_URL = 'https://github.com/oauth/authorize?';
+    // GITHUB_URL += 'client_id=116dde797c68291268c9';
+    // GITHUB_URL += '&redirect_uri=https://musictriviaquiz.herokuapp.com/login';
+    // // GITHUB_URL += '&scope=identity.basic,identity.email';
+    // window.location = GITHUB_URL;
   }
 
   render() {
@@ -168,13 +173,13 @@ class Login extends React.Component {
             </form>
 
             {
-              // <div>
-              //   <p>
-              //     <RRLink url={this.redirectToGithub}>Login with Github</RRLink>
-              //     <br />
-              //     <Link url="/signup" title="Need an Account?" />
-              //   </p>
-              // </div>
+              <div>
+                <p>
+                  <Link to={this.redirectToGithub}>Login with Github</Link>
+                  <br />
+                  <Link url="/signup" title="Need an Account?" />
+                </p>
+              </div>
             }
           </section>
         </div>

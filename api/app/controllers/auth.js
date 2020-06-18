@@ -20,7 +20,7 @@ exports.login = async (req, res) => {
       // console.log(error);
     }
 
-    const secret = process.env.CLIENT_SECRET || 'JWT SECRET';
+    const secret = process.env.SECRET || 'JWT SECRET';
 
     const token = jwt.sign({ id: user.id }, secret);
     return res.json({
@@ -78,7 +78,7 @@ exports.exchangeCode = async (req, res) => {
       type: 'regular',
     }, { returning: true });
 
-    const token = jwt.sign({ id: user.id }, process.env.CLIENT_SECRET);
+    const token = jwt.sign({ id: user.id }, process.env.SECRET);
     res.json({ token, loggedIn: true });
   } catch (e) {
     // log the error
