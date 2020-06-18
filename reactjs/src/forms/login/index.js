@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
-import { Redirect } from 'react-router-dom';
-// import { Link as RRLink, Redirect } from 'react-router-dom';
+// import { Redirect } from 'react-router-dom';
+import { Link as RRLink, Redirect } from 'react-router-dom';
 import Link from '../../link';
 import '../../css/main.css';
 import LoginContainer from './container';
@@ -169,10 +169,7 @@ class Login extends React.Component {
 
             <div>
               <p>
-                {
-                  // <button type="button" onClick={() => this.redirectToGithub(
-                // )}>Login with Github</button>
-                }
+                <RRLink url={this.redirectToGithub()}>Login with Github</RRLink>
                 <br />
                 <Link url="/signup" title="Need an Account?" />
               </p>
