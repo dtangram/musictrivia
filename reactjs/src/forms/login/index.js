@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RRPropTypes from 'react-router-prop-types';
 // import { Redirect } from 'react-router-dom';
-import { Link as RRLink, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Link from '../../link';
 import '../../css/main.css';
 import LoginContainer from './container';

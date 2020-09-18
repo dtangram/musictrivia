@@ -2,6 +2,13 @@ import $ from 'jquery';
 import 'bootstrap/dist/css/bootstrap.css';
 
 $(document).ready(() => {
+  // ADD CLASS TO STYLE CURRENT LINK
+  $('a').each(() => {
+    if ($(this).attr('href') === window.location.pathname) {
+      $(this).addClass('active currentLink');
+    }
+  });
+
   $(window).scroll((event) => {
     if ($(window).scrollTop() > 940) {
       $('.bckColor').stop().animate({ opacity: '1' }, 150);

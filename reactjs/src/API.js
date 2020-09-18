@@ -3,8 +3,12 @@ import errorLog from 'debug';
 
 const API = axios.create({
   // baseURL: 'https://musictriviaquiz.herokuapp.com/',
+
   // For Heroku
   baseURL: process.env.DATABASE_URL || 'https://musictriviaquiz.herokuapp.com/',
+
+  // For localhosting on Port 4000 for database
+  // baseURL: process.env.API_URL || 'http://localhost:4000',
 });
 
 API.interceptors.response.use(

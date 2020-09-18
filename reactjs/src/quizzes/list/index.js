@@ -38,7 +38,7 @@ class QuizzesListPrivate extends React.Component {
                 <h2>{quiz.name}</h2>
 
                 <p>
-                  <Link url={`/userId/quiz/${quiz.id}`} title="Play" />
+                  <Link url={`/${userId}/quiz/${quiz.id}`} title="Play" />
                   <Link url={`/admin/quizzes/detail/${quiz.id}`} title="Edit" />
                   <button type="submit" onClick={() => this.delete(quiz.id)}>Delete</button>
                 </p>

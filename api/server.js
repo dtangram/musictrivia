@@ -14,6 +14,8 @@ const app = require('./app');
 // Heroku
 const port = process.env.PORT || 5000;
 
+// const port = process.env.PORT || 4000;
+
 // Heroku Server
 // Serve any static files
 app.use(express.static(path.join(__dirname, '../reactjs/build')));
