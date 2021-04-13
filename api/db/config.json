@@ -2,25 +2,32 @@
   "development": {
     "username": "douglast.angram",
     "password": null,
-    "database": "musicTrivia_development",
+    "database": "musictrivia",
     "host": "127.0.0.1",
     "dialect": "postgres",
-    "operatorsAliases": false
-  },
-  "test": {
-    "username": "douglast.angram",
-    "password": null,
-    "database": "musicTrivia_test",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "operatorsAliases": false
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectionUnauthorized": false
+      }
+    }
   },
   "production": {
-    "username": "douglast.angram",
-    "password": null,
-    "database": "musicTrivia_production",
-    "host": "127.0.0.1",
-    "dialect": "postgres",
-    "operatorsAliases": false
+    "use_env_variable": "DATABASE_URL",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectionUnauthorized": false
+      }
+    }
+  },
+  "staging": {
+    "use_env_variable": "DATABASE_URL",
+    "dialectOptions": {
+      "ssl": {
+        "require": true,
+        "rejectionUnauthorized": false
+      }
+    }
   }
 }
